@@ -1,20 +1,33 @@
-var fs = require('fs');
+var fs = require('fs-extra');
 // var EventEmitter = require('events').EventEmitter;
 var pro = require('child_process').execFile;
 var exec = require('child_process').exec;
 var readline = require('readline');
 var version, lang, part, tag;
-var count = 0;
+var count = 1;
 // 调用第三方包xml-digester来解析xml
 var xml_digester = require("xml-digester");
 var digester = xml_digester.XmlDigester({});
-var _logger = xml_digester._logger;
-_logger.level(_logger.TRACE_LEVEL);
+// var _logger = xml_digester._logger;
+// _logger.level(_logger.TRACE_LEVEL);
 // 调用prompt包来进行输入
 var prompt = require('prompt');
+var moment = require('moment');
 
-var arr = ['cmcc', 'leren', 'tencent', 'cucc', 'zhangle', 'zhangle_yidongMM_sdk', 'yingyongbao', '360sdk', 'All'];
+var arr = ['no_platform', 'cmcc', 'leren', 'tencent', 'cucc', 'zhangle', 'zhangle_yidongMM_sdk', 'yingyongbao', '360sdk', 'ctcc', 'All'];
 var arr_lang = ['chinese', 'english'];
+
+function main() {
+    userInput(function() {
+        copyRes();
+
+        // 开始版本号读取函数
+        version = getApkVersion(function(vers) {
+            version = vers;
+            build();
+        });
+    });
+}
 
 // 创建一个prompt用的对象
 var schema = {
@@ -27,114 +40,88 @@ var schema = {
             required: true
         },
         part: {
-            description: '请选择渠道: [1]移动MM  [2]乐人  [3]腾讯  [4]联通  [5]掌乐  [6]掌乐(移动妹妹)  [7]应用宝  [8]360sdk  [9]以上所有渠道.',
-            pattern: /^[0-9]$/,
-            message: '请输入0-9之间的整数'
+            description: '请选择渠道: [0]空包 [1]移动MM  [2]乐人  [3]腾讯  [4]联通  [5]掌乐  [6]掌乐(移动妹妹)  [7]应用宝  [8]360sdk  [9]电信  [10]以上所有渠道.',
+            pattern: /^[0-9]{1,2}$/,
+            message: '请输入0-10之间的整数'
         }
     }
 };
 
 // 运行语言选择输入和渠道选择输入函数
-function userInput() {
+function userInput(cb) {
+    prompt.start();
 
-        prompt.start();
+    prompt.get(schema, function(err, result) {
+        var _part = result.part;
+        var _lang = result.lang;
+        lang = arr_lang[_lang - 1];
+        if (_part == 10) {
+            console.log('打包全部渠道');
+            part = arr[count];
+            console.log(part);
+        } else {
+            part = arr[_part];
+            count = _part + 100;
+        }
+        console.log('---------输入信息----------------------------');
+        console.log('  你选择的语言为 ' + _lang + ' ' + lang);
+        console.log('  您选择的渠道为 ' + _part + ' ' + part);
+        console.log('  count数值为' + count);
+        cb();
+    });
+}
 
-        prompt.get(schema, function(err, result) {
-            var _part = result.part;
-            var _lang = result.lang;
-            lang = arr_lang[_lang - 1];
-            copy_res(lang);
-            if (_part == 9) {
-                console.log('打包全部渠道');
-                part = arr[count];
-                console.log(part);
-
-            } else {
-                part = arr[_part - 1];
-                count = _part + 100;
-            }
-            console.log('---------输入信息----------------------------');
-            console.log('  你选择的语言为 ' + _lang + ' ' + lang);
-            console.log('  您选择的渠道为 ' + _part + ' ' + part);
-            console.log('  count数值为' + count);
-            // 开始版本号读取函数
-            apkVersion(part);
-        });
-
+// 根据对应的语言版本，拷贝对应的资源文件
+function copyRes(src, dst, callback) {
+    fs.removeSync('./assets/res');
+    if (lang === 'english') {
+        fs.copySync('../star/resources/res_en', './assets/res');
+    } else {
+        fs.copySync('../star/resources/res_cn', './assets/res');
     }
-    // 拷贝文件操作
-var copy = function(src, dst) {
-    // 读取目录中的所有目录和文件
-    var files = [];
-    files = fs.readdirSync(src);
-    files.forEach(function(path) {
-        // 屏蔽复制libcocos2djs.so文件
-        if (path != "libcocos2djs.so") {
-            var _src = src + '/' + path,
-                _dst = dst + '/' + path,
-                readable, writable;
-            //// 判断是否为文件
-            if (fs.statSync(_src).isFile()) {
-                // 创建读取流
-                readable = fs.createReadStream(_src);
-                // 创建写入流
-                writable = fs.createWriteStream(_dst);
-                // 通过管道来传输流
-                readable.pipe(writable);
+}
 
-                // 拷贝文件名输出
-                console.log("copy||" + _dst + "...");
-            }
-            // 如果是目录则递归调用自身
-            else if (fs.statSync(_src).isDirectory()) {
-                exists(_src, _dst, copy);
-            }
+// 读取版本号（根据选择的渠道，读取对应渠道的版本号）
+function getApkVersion(cb) {
+    var vers;
+    var path = "../thirPart/" + part + "/xml/AndroidManifest.xml";
+    var rs = fs.readFile(path, function(err, data) {
+        if (err) {
+            console.log('read file err: ' + err);
+        } else {
+            var xml = data.toString();
+            // digester.digest方法将xml解析成了json格式的对象
+            digester.digest(xml, function(err, result) {
+                if (err) {
+                    console.log(err);
+                } else { // 获取对象的属性
+                    vers = result['manifest']['android:versionName'];
+                    console.log("获取的版本号为" + vers);
+                    cb(vers);
+                }
+            });
         }
     });
-};
+}
 
-// 在复制目录前需要判断该目录是否存在，不存在需要先创建目录
-var exists = function(src, dst, callback) {
-    if (fs.existsSync(dst)) {
-        callback(src, dst);
-    } else {
-        fs.mkdirSync(dst);
-        callback(src, dst);
-    }
-};
-
-// 删除文件操作
-var deleteDir = function(path) {
-    var files = [];
-    if (fs.existsSync(path)) {
-        if (fs.statSync(path).isFile()) {
-            fs.unlinkSync(path);
-            return;
+function copyExceptCocosLib(src, dst) {
+    fs.copySync(src, dst, function(file) {
+        if (src.indexOf('libcocos2djs.so') !== -1) {
+            return false;
         }
+        return true;
+    });
+}
 
-        files = fs.readdirSync(path);
-
-        files.forEach(function(file, index) {
-
-            var curPath = path + "/" + file;
-
-            if (fs.statSync(curPath).isDirectory()) { // 迭代
-
-                deleteDir(curPath);
-
-            } else { // 删除文件
-                if (file != "libcocos2djs.so") {
-                    fs.unlinkSync(curPath);
-                }
-            }
-
-        });
-
-        if (path != "./libs" && path != "./libs/armeabi") {
-            fs.rmdirSync(path);
-        }
+// 主程序运行
+function build() {
+    if (version !== null) {
+        clearFiles();
+        tag = getBuildTime();
+        loadFiles();
+        buildApk();
     }
-};
+}
 
 // 替换字符串操作
 function replaceStringOfJava(fromId, toId) {
@@ -146,139 +133,126 @@ function replaceStringOfJava(fromId, toId) {
 
 // 清除文件操作
 function clearFiles() {
-    deleteDir("./src");
-    deleteDir("./sdk");
-    deleteDir("./res");
-    deleteDir("./libs");
-    deleteDir("./alipay_lib");
-    deleteDir("./runtime");
-    deleteDir("./AndroidManifest.xml");
-    deleteDir("./.classpath");
-    deleteDir("./project.properties");
-    deleteDir("./assets/res/loading/game_logo2.png");
-    deleteDir("./assets/res/loading/game_logo.png");
+    fs.removeSync("./src");
+    fs.removeSync("./sdk");
+    fs.removeSync("./res");
+    fs.removeSync("./libs");
+    fs.removeSync("./alipay_lib");
+    fs.removeSync("./runtime");
+    fs.removeSync("./AndroidManifest.xml");
+    fs.removeSync("./.classpath");
+    fs.removeSync("./project.properties");
+    fs.removeSync("./assets/res/loading/game_logo2.png");
+    fs.removeSync("./assets/res/loading/game_logo.png");
 }
 
 // 拷贝文件操作
-function loadFiles(part) {
-    if (part == "cmcc") {
+function loadFiles() {
+    if (part == "no_platform") {
         //拷贝files(来消星星的你)
-        exists('../thirPart/cmcc/src', './src', copy);
-        //exists( '../thirPart/cmcc/sdk', './sdk', copy);
-        exists('../thirPart/cmcc/res', './res', copy);
-        exists('../thirPart/cmcc/xml', './', copy);
-        exists('../thirPart/cmcc/libs', './libs', copy);
-        exists('../thirPart/cmcc/alipay_lib', './alipay_lib', copy);
+        copyExceptCocosLib('../thirPart/no_platform/src', './src');
+        copyExceptCocosLib('../thirPart/no_platform/res', './res');
+        copyExceptCocosLib('../thirPart/no_platform/xml', './');
+        copyExceptCocosLib('../thirPart/no_platform/libs', './libs');
+    } else if (part == "cmcc") {
+        //拷贝files(来消星星的你)
+        copyExceptCocosLib('../thirPart/cmcc/src', './src');
+        //exists( '../thirPart/cmcc/sdk', './sdk');
+        copyExceptCocosLib('../thirPart/cmcc/res', './res');
+        copyExceptCocosLib('../thirPart/cmcc/xml', './');
+        copyExceptCocosLib('../thirPart/cmcc/libs', './libs');
+        copyExceptCocosLib('../thirPart/cmcc/alipay_lib', './alipay_lib');
         //拷贝icon
-        exists('../star/resources/popostar', './assets/res/loading', copy);
+        copyExceptCocosLib('../star/resources/popostar', './assets/res/loading');
         //拷贝superegg资源
-        exists('../star/resources/cmcc/superegg', './assets/res/superegg', copy);
+        copyExceptCocosLib('../star/resources/cmcc/superegg', './assets/res/superegg');
     } else if (part == "leren") {
         //拷贝files(星星去哪儿)
-        exists('../thirPart/leren/src', './src', copy);
-        exists('../thirPart/leren/sdk', './sdk', copy);
-        exists('../thirPart/leren/res', './res', copy);
-        exists('../thirPart/leren/xml', './', copy);
-        exists('../thirPart/leren/libs', './libs', copy);
+        copyExceptCocosLib('../thirPart/leren/src', './src');
+        copyExceptCocosLib('../thirPart/leren/sdk', './sdk');
+        copyExceptCocosLib('../thirPart/leren/res', './res');
+        copyExceptCocosLib('../thirPart/leren/xml', './');
+        copyExceptCocosLib('../thirPart/leren/libs', './libs');
         //拷贝icon        
-        exists('../star/resources/gogostar', './assets/res/loading', copy);
+        copyExceptCocosLib('../star/resources/gogostar', './assets/res/loading');
     } else if (part == "tencent") {
         //拷贝files(来消星星的你)
-        exists('../thirPart/tencent/src', './src', copy);
-        exists('../thirPart/tencent/sdk', './sdk', copy);
-        exists('../thirPart/tencent/res', './res', copy);
-        exists('../thirPart/tencent/xml', './', copy);
-        exists('../thirPart/tencent/libs', './libs', copy);
-        exists('../thirPart/tencent/runtime', './runtime', copy);
+        copyExceptCocosLib('../thirPart/tencent/src', './src');
+        copyExceptCocosLib('../thirPart/tencent/sdk', './sdk');
+        copyExceptCocosLib('../thirPart/tencent/res', './res');
+        copyExceptCocosLib('../thirPart/tencent/xml', './');
+        copyExceptCocosLib('../thirPart/tencent/libs', './libs');
+        copyExceptCocosLib('../thirPart/tencent/runtime', './runtime');
     } else if (part == "cucc") {
         //拷贝files(来消星星的你)
-        exists('../thirPart/cucc/src', './src', copy);
-        exists('../thirPart/cucc/res', './res', copy);
-        exists('../thirPart/cucc/xml', './', copy);
-        exists('../thirPart/cucc/libs', './libs', copy);
+        copyExceptCocosLib('../thirPart/cucc/src', './src');
+        copyExceptCocosLib('../thirPart/cucc/res', './res');
+        copyExceptCocosLib('../thirPart/cucc/xml', './');
+        copyExceptCocosLib('../thirPart/cucc/libs', './libs');
         //拷贝icon        
-        exists('../star/resources/popostar', './assets/res/loading', copy);
+        copyExceptCocosLib('../star/resources/popostar', './assets/res/loading');
+        //拷贝superegg资源
+        copyExceptCocosLib('../star/resources/cucc/superegg', './assets/res/superegg');
     } else if (part == "zhangle") {
         //拷贝files(星星去哪儿)
-        exists('../thirPart/zhangle/src', './src', copy);
-        exists('../thirPart/zhangle/sdk', './sdk', copy);
-        exists('../thirPart/zhangle/res', './res', copy);
-        exists('../thirPart/zhangle/xml', './', copy);
-        exists('../thirPart/zhangle/libs', './libs', copy);
+        copyExceptCocosLib('../thirPart/zhangle/src', './src');
+        copyExceptCocosLib('../thirPart/zhangle/res', './res');
+        copyExceptCocosLib('../thirPart/zhangle/xml', './');
+        copyExceptCocosLib('../thirPart/zhangle/libs', './libs');
         //拷贝icon        
-        exists('../star/resources/gogostar', './assets/res/loading', copy);
+        copyExceptCocosLib('../star/resources/gogostar', './assets/res/loading');
+        //拷贝superegg资源
+        copyExceptCocosLib('../star/resources/zhangle/superegg', './assets/res/superegg');
     } else if (part == "zhangle_yidongMM_sdk") {
         //拷贝files(星星去哪儿)        
-        exists('../thirPart/zhangle_yidongMM_sdk/src', './src', copy);
-        exists('../thirPart/zhangle_yidongMM_sdk/res', './res', copy);
-        exists('../thirPart/zhangle_yidongMM_sdk/xml', './', copy);
-        exists('../thirPart/zhangle_yidongMM_sdk/libs', './libs', copy);
-        exists('../thirPart/zhangle_yidongMM_sdk/alipay_lib', './alipay_lib', copy);
+        copyExceptCocosLib('../thirPart/zhangle_yidongMM_sdk/src', './src');
+        copyExceptCocosLib('../thirPart/zhangle_yidongMM_sdk/res', './res');
+        copyExceptCocosLib('../thirPart/zhangle_yidongMM_sdk/xml', './');
+        copyExceptCocosLib('../thirPart/zhangle_yidongMM_sdk/libs', './libs');
+        copyExceptCocosLib('../thirPart/zhangle_yidongMM_sdk/alipay_lib', './alipay_lib');
         //拷贝icon        
-        exists('../star/resources/gogostar', './assets/res/loading', copy);
+        copyExceptCocosLib('../star/resources/gogostar', './assets/res/loading');
         //拷贝superegg资源
-        exists('../star/resources/zhangle_yidongMM_sdk/superegg', './assets/res/superegg', copy);
+        copyExceptCocosLib('../star/resources/zhangle_yidongMM_sdk/superegg', './assets/res/superegg');
     } else if (part == "yingyongbao") {
         //拷贝files(来消星星的你)
-        exists('../thirPart/yingyongbao/src', './src', copy);
-        exists('../thirPart/yingyongbao/sdk', './sdk', copy);
-        exists('../thirPart/yingyongbao/res', './res', copy);
-        exists('../thirPart/yingyongbao/xml', './', copy);
-        exists('../thirPart/yingyongbao/libs', './libs', copy);
-        exists('../thirPart/yingyongbao/alipay_lib', './alipay_lib', copy);
+        copyExceptCocosLib('../thirPart/yingyongbao/src', './src');
+        copyExceptCocosLib('../thirPart/yingyongbao/sdk', './sdk');
+        copyExceptCocosLib('../thirPart/yingyongbao/res', './res');
+        copyExceptCocosLib('../thirPart/yingyongbao/xml', './');
+        copyExceptCocosLib('../thirPart/yingyongbao/libs', './libs');
+        copyExceptCocosLib('../thirPart/yingyongbao/alipay_lib', './alipay_lib');
         //拷贝icon
-        exists('../star/resources/popostar', './assets/res/loading', copy);
+        copyExceptCocosLib('../star/resources/popostar', './assets/res/loading');
     } else if (part == "360sdk") {
         //拷贝files(来消星星的你)
-        exists('../thirPart/360sdk/src', './src', copy);
-        exists('../thirPart/360sdk/res', './res', copy);
-        exists('../thirPart/360sdk/xml', './', copy);
-        exists('../thirPart/360sdk/libs', './libs', copy);
+        copyExceptCocosLib('../thirPart/360sdk/src', './src');
+        copyExceptCocosLib('../thirPart/360sdk/res', './res');
+        copyExceptCocosLib('../thirPart/360sdk/xml', './');
+        copyExceptCocosLib('../thirPart/360sdk/libs', './libs');
         //拷贝icon
-        exists('../star/resources/popostar', './assets/res/loading', copy);
+        copyExceptCocosLib('../star/resources/popostar', './assets/res/loading');
+    } else if (part == "ctcc") {
+        //拷贝files(来消星星的你)
+        copyExceptCocosLib('../thirPart/ctcc/src', './src');
+        copyExceptCocosLib('../thirPart/ctcc/res', './res');
+        copyExceptCocosLib('../thirPart/ctcc/xml', './');
+        copyExceptCocosLib('../thirPart/ctcc/libs', './libs'); 
+        copyExceptCocosLib('../thirPart/ctcc/assets', './assets');
+        //拷贝icon
+        copyExceptCocosLib('../star/resources/popostar', './assets/res/loading');
+        //拷贝superegg资源
+        copyExceptCocosLib('../star/resources/ctcc/superegg', './assets/res/superegg');
     }
-    // console.log(argv[3]);
-    // console.log(_version);
-    // console.log(_part);
-    setTimeout(function() {
-        build_apk(version, lang, part);
-    }, 100);
-}
-
-// 读取版本号（根据选择的渠道，读取对应渠道的版本号）
-function apkVersion(part) {
-    console.log(part);
-    console.log(typeof(part));
-    var vers;
-    var path = "../thirPart/" + part + "/xml/AndroidManifest.xml";
-    var rs = fs.readFile(path, function(err, data) {
-        var xml = data.toString();
-        // digester.digest方法将xml解析成了json格式的对象
-        digester.digest(xml, function(err, result) {
-            if (err) {
-                console.log(err);
-            } else { // 获取对象的属性
-                vers = result['manifest']['android:versionName'];
-            }
-        });
-        console.log(part);
-        console.log("获取的版本号为" + vers);
-
-        console.log(typeof(part));
-        version = vers;
-        // 开始调用main()函数
-        main(part);
-    });
 }
 
 // 开始创建apk
-function build_apk(argv) {
-    console.log(count);
-    console.log(part);
+function buildApk() {
+    console.log('buildApk count: ' + count);
     // 替换语言字符串
     replaceStringOfJava('chinese', lang);
     // 定义文件包名
-    var apk_name = "./apk/star" + version + part + "_release" + tag + ".apk";
+    var apk_name = "./apk/star_" + version + "_" + part + "_release" + tag + ".apk";
     console.log(apk_name);
     // 调用ant打包命令
     // ------------------------------注意SDK路径配置问题-------------------------------------
@@ -295,98 +269,43 @@ function build_apk(argv) {
         });
         release.on('exit', function(code) {
             console.log('release子进程已关闭，代码:' + code);
+
+            console.log('build succ dest name ' + apk_name);
             // 拷贝apk
-            copy_apk('./bin/star-release.apk', apk_name);
+            fs.copySync('./bin/star-release.apk', apk_name);
+            if (needContinue()) {
+                build();
+            }
+
         });
-        console.log(version);
-        console.log(part);
     });
     process.on('exit', function() {
         console.log('打包完成，进程退出');
     });
 }
 
-// 拷贝apk文件
-function copy_apk(src, dst) {
-    rs = fs.createReadStream(src);
-    ws = fs.createWriteStream(dst);
-    rs.pipe(ws);
-    //拷贝文件名输出
-    console.log("copy||" + dst + "...");
-    ws.on('data', function(data) {
-        console.log('copy_apk' + data)
-    });
-    ws.on('exit', function(code) {
-        //通过count判断选择的渠道
-        all_count(part);
-        console.log("copy_apk完成");
-    });
-    ws.emit('exit');
-    console.log("count判断完成");
-}
-
 // 用于全部渠道打包时count计数
-function all_count(part) {
-    console.log(count);
+function needContinue() {
+    console.log("needContinue enter:" + count);
     var step = count
-    if (step < 7) {
+    if (step < 8) {
         console.log('进来了');
         step++;
         count = step;
         var par = arr[count];
         part = par;
-        console.log(part);
-        //process.argv.splice(0, 4, '', '', '', part);
-        return apkVersion(part);
+        console.log('next channel is ' + part);
+        return true;
     } else {
         console.log('没进去');
-        return;
     }
+    return false;
 }
 
 // 获取实时时间
-function packdate(apk_name) {
-    var packdate = new Date();
-    // 分别获取时间的对应数据
-    year = packdate.getFullYear();
-    month = packdate.getMonth() + 1; //js获取月份以0开始,'0'代表一月份。
-    date = packdate.getDate();
-    hours = packdate.getHours();
-    minutes = packdate.getMinutes();
-    seconds = packdate.getSeconds();
-    //在小于10的数字面前加0
-    if (month < 10) month = '0' + month;
-    if (date < 10) date = '0' + date
-    if (hours < 10) hours = '0' + hours;
-    if (minutes < 10) minutes = '0' + minutes;
-    if (seconds < 10) seconds = '0' + seconds;
-    //拼接字符串为apk的文件名
-    var apk_name = year + "" + month + "" + date + "" + hours + "" + minutes + "" + seconds;
-    tag = apk_name;
+function getBuildTime() {
+    var now = moment();
+    return now.format('YYYYMMDDHHmmss');
 }
 
-// 根据对应的语言版本，拷贝对应的资源文件
-function copy_res(src, dst, callback) {
-    deleteDir('./assets/res');
-    if (lang === 'english') {
-        exists('../star/resources/res_en', './assets/res', copy);
-    } else {
-        exists('../star/resources/res_cn', './assets/res', copy);
-    }
-}
-
-// 主程序运行
-function main(part) {
-    if (version !== null) {
-        clearFiles();
-        packdate();
-        loadFiles(part);
-        console.log(version);
-        console.log(lang);
-        console.log(part);
-        console.log(tag);
-    }
-}
-
-
-userInput();
+main();
