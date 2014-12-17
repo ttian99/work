@@ -3,7 +3,7 @@ var fs = require('fs-extra');
 var pro = require('child_process').execFile;
 var exec = require('child_process').exec;
 var readline = require('readline');
-var version, lang, part, tag;
+var version, lang, part, tag, block;
 var count = 1;
 // 调用第三方包xml-digester来解析xml
 var xml_digester = require("xml-digester");
@@ -14,15 +14,15 @@ var digester = xml_digester.XmlDigester({});
 var prompt = require('prompt');
 var moment = require('moment');
 
-var arr_cn = ['no-platform', 'cmcc', 'leren', 'tencent', 'cucc', 'zhangle', 'zhangle_yidongMM_sdk', 'yingyongbao', '360sdk', 'ctcc', 'All'];
+var arr_cn = ['no-platform', 'cmcc', 'leren', 'tencent', 'cucc', 'zhangle', 'zhangle_yidongMM_sdk', 'yingyongbao', '360sdk', 'ctcc', 'xiaomi', 'All'];
 var arr_lang = ['chinese', 'english', 'vietnamese'];
 var arr_en = ['no-platform'];
 var arr_vn = ['no-platform', 'ALAO'];
+var arr_block = ['block1', 'block2'];
 
 function main() {
     choiceLanguage(function(putlang) {
-        //开始拷贝对应的语言版本资源
-        copyRes();
+        // 开始选择渠道号
         console.log('main putlang:' + putlang);
         choicePart(putlang, function() {
             // 开始版本号读取函数
@@ -32,8 +32,8 @@ function main() {
                 build();
             });
         });
+        //build();
     });
-    //build();
 }
 
 // 创建prompt用的对象
@@ -44,6 +44,13 @@ var inputLang = {
             //default: '1',
             pattern: /^[1-3]+$/,
             message: '输入参数不正确',
+            required: true
+        },
+        block: {
+            description: '请选择方块类型:[1] block1 [2] block2',
+            default: '1',
+            pattern: /^[1-2]$/,
+            message: ' 输入参数不正确',
             required: true
         }
     }
@@ -70,11 +77,11 @@ var vn_par = {
             required: true
         }
     }
-}
+};
 var cn_par = {
     properties: {
         part: {
-            description: '请选择渠道: [0]空包 [1]移动MM  [2]乐人  [3]腾讯  [4]联通  [5]掌乐  [6]掌乐(移动妹妹)  [7]应用宝  [8]360sdk  [9]电信  [10]以上所有渠道.\n\n',
+            description: '请选择渠道: [0]空包 [1]移动MM  [2]乐人  [3]腾讯  [4]联通  [5]掌乐  [6]掌乐(移动妹妹)  [7]应用宝  [8]360sdk  [9]电信  [10]小米  [11]以上所有渠道.\n\n',
             //default: '0',
             pattern: /^[0-9]{1,2}$/,
             message: '请输入0-10之间的整数',
@@ -87,12 +94,15 @@ var cn_par = {
 function choiceLanguage(callback) {
     prompt.start();
     prompt.get(inputLang, function(err, result) {
-        var putlang;
+        var putlang, putblock;
         putlang = result.lang;
         lang = arr_lang[putlang - 1];
+        putblock = result.block;
+        block = arr_block[putblock - 1];
         console.log('语言版本为' + putlang + lang);
-        callback(putlang);
+        callback(putlang, block);
     });
+
 }
 
 // 选择渠道号
@@ -102,7 +112,7 @@ function choicePart(putlang, callback) {
         prompt.get(cn_par, function(err, result) {
             inputpart = result.part;
             //判断是否选择全部渠道打包
-            if (inputpart == 10) {
+            if (inputpart == 11) {
                 console.log('您选择打包全部渠道');
                 part = arr_cn[count];
                 console.log(part);
@@ -144,6 +154,11 @@ function copyRes(src, dst, callback) {
     }
 }
 
+// 选择使用哪种方块
+function copyBlock() {
+    fs.copySync('../star/resources/' + block, './assets/res/core');
+}
+
 // 读取版本号（根据选择的渠道，读取对应渠道的版本号）
 function getApkVersion(cb) {
     var vers;
@@ -179,7 +194,11 @@ function copyExceptCocosLib(src, dst) {
 // 主程序运行
 function build() {
     if (version !== null) {
-        clearFiles();
+        clearFiles(function() {
+            //开始拷贝对应的语言版本资源
+            copyRes();
+            copyBlock();
+        });
         tag = getBuildTime();
         loadFiles();
         buildApk();
@@ -195,7 +214,7 @@ function replaceStringOfJava(fromId, toId) {
 }
 
 // 清除文件操作
-function clearFiles() {
+function clearFiles(callback) {
     fs.removeSync("./src");
     fs.removeSync("./sdk");
     fs.removeSync("./res");
@@ -207,6 +226,7 @@ function clearFiles() {
     fs.removeSync("./project.properties");
     fs.removeSync("./assets/res/loading/game_logo2.png");
     fs.removeSync("./assets/res/loading/game_logo.png");
+    callback();
 }
 
 // 拷贝文件操作
@@ -217,6 +237,8 @@ function loadFiles() {
         copyExceptCocosLib('../thirPart/no-platform/res', './res');
         copyExceptCocosLib('../thirPart/no-platform/xml', './');
         copyExceptCocosLib('../thirPart/no-platform/libs', './libs');
+        // 拷贝icon
+        copyExceptCocosLib('../star/resources/popostar/loading', './assets/res/loading');
     } else if (part == "cmcc") {
         // 拷贝files(来消星星的你)
         copyExceptCocosLib('../thirPart/cmcc/src', './src');
@@ -225,7 +247,7 @@ function loadFiles() {
         copyExceptCocosLib('../thirPart/cmcc/libs', './libs');
         copyExceptCocosLib('../thirPart/cmcc/alipay_lib', './alipay_lib');
         // 拷贝icon
-        copyExceptCocosLib('../star/resources/popostar', './assets/res/loading');
+        copyExceptCocosLib('../star/resources/popostar/loading', './assets/res/loading');
         // 拷贝superegg资源
         copyExceptCocosLib('../star/resources/cmcc/superegg', './assets/res/superegg');
     } else if (part == "leren") {
@@ -236,7 +258,7 @@ function loadFiles() {
         copyExceptCocosLib('../thirPart/leren/xml', './');
         copyExceptCocosLib('../thirPart/leren/libs', './libs');
         //拷贝icon        
-        copyExceptCocosLib('../star/resources/gogostar', './assets/res/loading');
+        copyExceptCocosLib('../star/resources/gogostar1/loading', './assets/res/loading');
     } else if (part == "tencent") {
         // 拷贝files(来消星星的你)
         copyExceptCocosLib('../thirPart/tencent/src', './src');
@@ -252,7 +274,7 @@ function loadFiles() {
         copyExceptCocosLib('../thirPart/cucc/xml', './');
         copyExceptCocosLib('../thirPart/cucc/libs', './libs');
         // 拷贝icon        
-        copyExceptCocosLib('../star/resources/popostar', './assets/res/loading');
+        copyExceptCocosLib('../star/resources/popostar/loading', './assets/res/loading');
         // 拷贝superegg资源
         copyExceptCocosLib('../star/resources/cucc/superegg', './assets/res/superegg');
     } else if (part == "zhangle") {
@@ -262,7 +284,7 @@ function loadFiles() {
         copyExceptCocosLib('../thirPart/zhangle/xml', './');
         copyExceptCocosLib('../thirPart/zhangle/libs', './libs');
         // 拷贝icon        
-        copyExceptCocosLib('../star/resources/gogostar', './assets/res/loading');
+        copyExceptCocosLib('../star/resources/gogostar1/loading', './assets/res/loading');
         // 拷贝superegg资源
         copyExceptCocosLib('../star/resources/zhangle/superegg', './assets/res/superegg');
     } else if (part == "zhangle_yidongMM_sdk") {
@@ -273,7 +295,7 @@ function loadFiles() {
         copyExceptCocosLib('../thirPart/zhangle_yidongMM_sdk/libs', './libs');
         copyExceptCocosLib('../thirPart/zhangle_yidongMM_sdk/alipay_lib', './alipay_lib');
         // 拷贝icon        
-        copyExceptCocosLib('../star/resources/gogostar', './assets/res/loading');
+        copyExceptCocosLib('../star/resources/gogostar1/loading', './assets/res/loading');
         // 拷贝superegg资源
         copyExceptCocosLib('../star/resources/zhangle_yidongMM_sdk/superegg', './assets/res/superegg');
     } else if (part == "yingyongbao") {
@@ -285,7 +307,7 @@ function loadFiles() {
         copyExceptCocosLib('../thirPart/yingyongbao/libs', './libs');
         copyExceptCocosLib('../thirPart/yingyongbao/alipay_lib', './alipay_lib');
         // 拷贝icon
-        copyExceptCocosLib('../star/resources/popostar', './assets/res/loading');
+        copyExceptCocosLib('../star/resources/popostar/loading', './assets/res/loading');
     } else if (part == "360sdk") {
         // 拷贝files(来消星星的你)
         copyExceptCocosLib('../thirPart/360sdk/src', './src');
@@ -293,7 +315,9 @@ function loadFiles() {
         copyExceptCocosLib('../thirPart/360sdk/xml', './');
         copyExceptCocosLib('../thirPart/360sdk/libs', './libs');
         // 拷贝icon
-        copyExceptCocosLib('../star/resources/popostar', './assets/res/loading');
+        copyExceptCocosLib('../star/resources/gogostar2/loading', './assets/res/loading');
+        //拷贝superegg资源
+        copyExceptCocosLib('../star/resources/360pay/superegg', './assets/res/superegg');
     } else if (part == "ctcc") {
         // 拷贝files(来消星星的你)
         copyExceptCocosLib('../thirPart/ctcc/src', './src');
@@ -302,7 +326,7 @@ function loadFiles() {
         copyExceptCocosLib('../thirPart/ctcc/libs', './libs');
         copyExceptCocosLib('../thirPart/ctcc/assets', './assets');
         // 拷贝icon
-        copyExceptCocosLib('../star/resources/popostar', './assets/res/loading');
+        copyExceptCocosLib('../star/resources/popostar/loading', './assets/res/loading');
         // 拷贝superegg资源(超值神奇蛋)
         copyExceptCocosLib('../star/resources/ctcc/superegg', './assets/res/superegg');
     } else if (part == 'ALAO') {
@@ -314,6 +338,17 @@ function loadFiles() {
         copyExceptCocosLib('../thirPart/ALAO/assets', './assets');
         // 拷贝icon
         copyExceptCocosLib('../star/resources/res_vn/loading', './assets/res/loading');
+    } else if (part == "xiaomi") {
+        // 拷贝files(来消星星的你)
+        copyExceptCocosLib('../thirPart/xiaomi/src', './src');
+        copyExceptCocosLib('../thirPart/xiaomi/res', './res');
+        copyExceptCocosLib('../thirPart/xiaomi/xml', './');
+        copyExceptCocosLib('../thirPart/xiaomi/libs', './libs');
+        copyExceptCocosLib('../thirPart/xiaomi/assets', './assets');
+        // 拷贝icon
+        copyExceptCocosLib('../star/resources/popostar/loading', './assets/res/loading');
+        // 拷贝superegg资源
+        copyExceptCocosLib('../star/resources/xiaomi/superegg', './assets/res/superegg');
     }
 }
 
@@ -358,7 +393,7 @@ function buildApk() {
 function needContinue() {
     console.log("needContinue enter:" + count);
     var step = count
-    if (step < 8) {
+    if (step < 9) {
         console.log('继续打包计数' + count);
         step++;
         count = step;
