@@ -221,8 +221,11 @@ function build() {
             copyBlock();
         });
         tag = getBuildTime();
-        loadFiles();
-        buildApk();
+        if (part !== null) {
+            loadCommonFiles(part);
+            loadDifferentFiles();
+            buildApk();
+        }
     }
 }
 
@@ -248,6 +251,83 @@ function clearFiles(callback) {
     fs.removeSync("./assets/res/loading/game_logo2.png");
     fs.removeSync("./assets/res/loading/game_logo.png");
     callback();
+}
+
+
+function loadCommonFiles(part) {
+    // 拷贝共同的files
+    copyExceptCocosLib('../thirPart/' + part + '/xml', './');
+    copyExceptCocosLib('../thirPart/' + part + '/src', './src');
+    copyExceptCocosLib('../thirPart/' + part + '/res', './res');
+    copyExceptCocosLib('../thirPart/' + part + '/libs', './libs');
+    //选择性拷贝
+    copyExceptCocosLib('../thirPart/' + part + '/assets', './assets');
+    copyExceptCocosLib('../thirPart/' + part + '/runtime', './runtime');
+    copyExceptCocosLib('../thirPart/' + part + '/sdk', './sdk');
+    copyExceptCocosLib('../thirPart/' + part + '/alipay_lib', './alipay_lib');
+}
+
+function loadDifferentFiles() {
+    if (part == "no-platform") {
+        // 拷贝icon
+        copyExceptCocosLib('../star/resources/popostar/loading', './assets/res/loading');
+    } else if (part == "cmcc") {
+        // 拷贝icon
+        copyExceptCocosLib('../star/resources/popostar/loading', './assets/res/loading');
+        // 拷贝superegg资源
+        copyExceptCocosLib('../star/resources/cmcc/superegg', './assets/res/superegg');
+    } else if (part == "leren") {
+        //拷贝icon        
+        copyExceptCocosLib('../star/resources/gogostar1/loading', './assets/res/loading');
+    } else if (part == "tencent") {
+
+    } else if (part == "cucc") {
+        // 拷贝icon        
+        copyExceptCocosLib('../star/resources/popostar/loading', './assets/res/loading');
+        // 拷贝superegg资源
+        copyExceptCocosLib('../star/resources/cucc/superegg', './assets/res/superegg');
+    } else if (part == "zhangle") {
+        // 拷贝icon        
+        copyExceptCocosLib('../star/resources/gogostar1/loading', './assets/res/loading');
+        // 拷贝superegg资源
+        copyExceptCocosLib('../star/resources/zhangle/superegg', './assets/res/superegg');
+    } else if (part == "zhangle_yidongMM_sdk") {
+        // 拷贝icon        
+        copyExceptCocosLib('../star/resources/gogostar1/loading', './assets/res/loading');
+        // 拷贝superegg资源
+        copyExceptCocosLib('../star/resources/zhangle_yidongMM_sdk/superegg', './assets/res/superegg');
+    } else if (part == "zhangle_MyEPay") {
+        // 拷贝icon        
+        copyExceptCocosLib('../star/resources/gogostar1/loading', './assets/res/loading');
+        // 拷贝superegg资源
+        copyExceptCocosLib('../star/resources/zhangle_MyEPay/superegg', './assets/res/superegg');
+    } else if (part == "zhangle_cucc") {
+        // 拷贝icon        
+        copyExceptCocosLib('../star/resources/gogostar1/loading', './assets/res/loading');
+        // 拷贝superegg资源
+        copyExceptCocosLib('../star/resources/zhangle_cucc/superegg', './assets/res/superegg');
+    } else if (part == "yingyongbao") {
+        // 拷贝icon
+        copyExceptCocosLib('../star/resources/popostar/loading', './assets/res/loading');
+    } else if (part == "360sdk") {
+        // 拷贝icon
+        copyExceptCocosLib('../star/resources/gogostar2/loading', './assets/res/loading');
+        //拷贝superegg资源
+        copyExceptCocosLib('../star/resources/360pay/superegg', './assets/res/superegg');
+    } else if (part == "ctcc") {
+        // 拷贝icon
+        copyExceptCocosLib('../star/resources/popostar/loading', './assets/res/loading');
+        // 拷贝superegg资源(超值神奇蛋)
+        copyExceptCocosLib('../star/resources/ctcc/superegg', './assets/res/superegg');
+    } else if (part == 'ALAO') {
+        // 拷贝icon
+        copyExceptCocosLib('../star/resources/res_vn/loading', './assets/res/loading');
+    } else if (part == "xiaomi") {
+        // 拷贝icon
+        copyExceptCocosLib('../star/resources/popostar/loading', './assets/res/loading');
+        // 拷贝superegg资源
+        copyExceptCocosLib('../star/resources/xiaomi/superegg', './assets/res/superegg');
+    }
 }
 
 // 拷贝文件操作
