@@ -35,8 +35,12 @@ import cn.sharesdk.ShareSDKUtils;
 import com.methodsRun.methodsRun;
 import com.tencent.stat.StatConfig;
 import com.tencent.stat.StatService;
-import com.upay.billing.sdk.Upay;
-import com.upay.billing.sdk.UpayCallback;
+import com.tendcloud.tenddata.TDGAAccount;
+import com.tendcloud.tenddata.TDGAAccount.AccountType;
+import com.tendcloud.tenddata.TDGAVirtualCurrency;
+import com.tendcloud.tenddata.TalkingDataGA;
+//import com.upay.billing.sdk.Upay;
+//import com.upay.billing.sdk.UpayCallback;
 
 import android.app.Activity;
 import android.app.DownloadManager;
@@ -55,12 +59,11 @@ public class star extends Cocos2dxActivity {
 	public static Activity m_instance = null;
 	public static boolean test_version = false;
 	public static JSONObject payArgs = null;
-
-	final static TextView mTextView_Payment = null;
-	final static TextView mTextView_Trade = null;
-	static String request_payment = null;
-	static String request_trade = null;
-	final static Handler mHandler = new Handler(){
+	
+	public static String mOrderId = null;
+	public static TDGAAccount mAccount = TDGAAccount.setAccount("10000158");
+	
+	private static Handler mHandler = new Handler(){
 		public void handleMessage(Message msg){
 			switch (msg.what) {
 			case 0:
@@ -73,6 +76,12 @@ public class star extends Cocos2dxActivity {
 		}
 	};
 	
+
+	final static TextView mTextView_Payment = null;
+	final static TextView mTextView_Trade = null;
+	static String request_payment = null;
+	static String request_trade = null;
+	
 	
 	private static HashMap<String, String> payCodeDic = null;
 	
@@ -83,20 +92,24 @@ public class star extends Cocos2dxActivity {
 		// /
 		m_instance = this;
 		
-		//Upay初始化sdk
-		Upay up = Upay.initInstance(this,"test_app", "abc");
-		Log.d(TAG, "----------------sdk初始化完成-------------test_app");
-		Toast.makeText(m_instance, "初始化完成:" , Toast.LENGTH_SHORT)
-		.show();
-		//初始化哈希表
-		payCodeDic = new HashMap<String, String>();
-
-		for (int i = 1; i <= 15; i++) {
-			if (i < 10)
-				payCodeDic.put(i + "", "test_app_g0" + (i) + "");
-			else
-				payCodeDic.put(i + "", "test_app_g" + (i) + "");
-		}
+		Upay.initPay(this);
+		
+//		//Upay初始化sdk
+//		Upay up = Upay.initInstance(this,"10000158", "01A2F2471A421FC07AD52FEA8F5EFB79");
+//		Log.d(TAG, "----------------sdk初始化完成-------------test_app");
+////		Toast.makeText(m_instance, "初始化完成:" , Toast.LENGTH_SHORT)
+////		.show();
+//		//初始化哈希表
+//		payCodeDic = new HashMap<String, String>();
+//
+//		for (int i = 1; i <= 16; i++) {
+//			if (i < 10)
+//				payCodeDic.put(i + "", "00000" + (i) + "");
+//			else
+//				payCodeDic.put(i + "", "0000" + (i) + "");
+//		}
+//		
+//		mOrderId = TalkingDataGA.getDeviceId(star.m_instance) + "-" + System.currentTimeMillis() ;
 
 		StatConfig.setDebugEnable(true);
 		StatService.trackCustomEvent(this, "onCreate", "");
@@ -110,8 +123,24 @@ public class star extends Cocos2dxActivity {
 				DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
 		// Util.openAPK();
+//		TalkingDataGA.init(this, "A33B469D0AA02A7E15E8128A54E98261", "Upay");
+//		
+//		mAccount=TDGAAccount.setAccount(TalkingDataGA.getDeviceId(this));
+//    	mAccount.setAccountType(AccountType.ANONYMOUS);
 	}
 
+	@Override
+	protected void onResume() {
+	     super.onResume();
+	     TalkingDataGA.onResume(this);       
+	 }
+
+	@Override
+	 protected void onPause() {
+	     super.onPause();
+	     TalkingDataGA.onPause(this);
+	 }
+	
 	public static void buyDiamond(final String jsonStr) {
 		star.m_instance.runOnUiThread(new Runnable() {
 			public void run() {
@@ -123,122 +152,125 @@ public class star extends Cocos2dxActivity {
 					String extra = obj.getString("subject");
 					String tradeId = null;
 					final int price = Integer.parseInt(obj.getString("total"));
-					Toast.makeText(m_instance, "buyDiamond" + extra + goodsKey + price, Toast.LENGTH_SHORT)
-					.show();
 					
+					TDGAVirtualCurrency.onChargeRequest(mOrderId, obj.getString("subject"), Integer.parseInt(obj.getString("total")) , "CNY", Integer.parseInt(obj.getString("total")) , methodsRun.getPlatform());
 					
-					Upay up = Upay.getInstance("test_app");
-					up.pay("test_app_g20", "透传数据", new UpayCallback() {
-
+					Upay up = Upay.getInstance("10000158");
+					up.pay(goodsKey, extra, new UpayCallback() {
+						int code;
+						int successCode;
+						String msg = "购买失败";
+						
+						
+//						@Override
+//						public void onPaymentResult(String goodsKey, String tradeId, int resultCode, String errorMsg, String extra) {
+//							Log.i(TAG, "paymentResult");
+//							if(resultCode==200){
+//								request_payment = "paymentResult返回的参数---->支付成功-----resultCode="+resultCode+"--goodsKey="+goodsKey+"--tradeId="+tradeId+"--extra="+extra;
+//							}else if(resultCode == 110){
+//								request_payment = "paymentResult返回的参数---->支付取消-----resultCode="+resultCode+"--goodsKey="+goodsKey+"--tradeId="+tradeId+"--extra="+extra;
+//							}else{
+//								request_payment = "paymentResult返回的参数---->支付失败-----resultCode="+resultCode+"--goodsKey="+goodsKey+"--tradeId="+tradeId+"--extra="+extra;
+//							}
+//							Log.e(TAG, request_payment);
+//							mHandler.sendEmptyMessage(0);
+//						}
+//
+//						@Override
+//						public void onTradeProgress(String goodsKey, String tradeId, int price, int paid, String extra, int resultCode) {
+//							Log.i(TAG, "tradeProgress");
+//							if(resultCode == 200){
+//								request_trade = "tradeProgress返回的参数---->扣费成功-----resultCode="+resultCode+"--goodsKey="+goodsKey+"--tradeId="+tradeId+"--price="+price+"--paid="+paid+"--extra="+extra;
+//								Log.e(TAG, request_trade);
+//								mHandler.sendEmptyMessage(1);
+//							}else if(resultCode == 203){
+//								request_trade = "tradeProgress返回的参数---->只是短信发送成功-----resultCode="+resultCode+"--goodsKey="+goodsKey+"--tradeId="+tradeId+"--price="+price+"--paid="+paid+"--extra="+extra;
+//								Log.e(TAG, request_trade);
+//								mHandler.sendEmptyMessage(1);
+//							}
+//						}
+						
+						
+						
+						
 						@Override
 						public void onPaymentResult(String goodsKey, String tradeId, int resultCode, String errorMsg, String extra) {
 							Log.i(TAG, "paymentResult");
+							Log.i(TAG, "onPaymentResult返回码" + resultCode + "———" + goodsKey +"========"+ price +"++++++++++++"+ tradeId +">>>>>>>>>"+ extra);
+//							Toast.makeText(m_instance, "tradeProgress返回码" + resultCode + "———" + goodsKey + price + tradeId + extra, Toast.LENGTH_SHORT)
+//							.show();
 							if(resultCode==200){
-								Toast.makeText(m_instance, "buyDiamond" + resultCode + goodsKey + price + tradeId + extra, Toast.LENGTH_SHORT)
+								Toast.makeText(m_instance, "支付成功" /*+ resultCode + goodsKey + price + tradeId + extra*/, Toast.LENGTH_SHORT)
 								.show();
-								//request_payment = "paymentResult返回的参数---->支付成功-----resultCode="+resultCode+"--goodsKey="+goodsKey+"--tradeId="+tradeId+"--extra="+extra;
+								code = successCode;
+								msg = "购买成功";
 							}else if(resultCode == 110){
-								Toast.makeText(m_instance, "buyDiamond" + resultCode + goodsKey + price + tradeId + extra, Toast.LENGTH_SHORT)
+								Toast.makeText(m_instance, "支付取消"/* + resultCode + goodsKey + price + tradeId + extra*/, Toast.LENGTH_SHORT)
 								.show();
-								//request_payment = "paymentResult返回的参数---->支付取消-----resultCode="+resultCode+"--goodsKey="+goodsKey+"--tradeId="+tradeId+"--extra="+extra;
+								Log.i(TAG, "onPaymentResult支付取消" + resultCode + "———" + goodsKey +"========"+ price +"++++++++++++"+ tradeId +">>>>>>>>>"+ extra);
+								code = 1001;
+								msg = "支付取消";
+								setCode(code,msg);
+//							    return;
 							}else{
-								Toast.makeText(m_instance, "buyDiamond" + resultCode + goodsKey + price + tradeId + extra, Toast.LENGTH_SHORT)
+								Toast.makeText(m_instance, "支付失败"/* + resultCode + goodsKey + price + tradeId + extra*/, Toast.LENGTH_SHORT)
 								.show();
-								//request_payment = "paymentResult返回的参数---->支付失败-----resultCode="+resultCode+"--goodsKey="+goodsKey+"--tradeId="+tradeId+"--extra="+extra;
+								code = 1002;
+								msg = "支付失败";
+								setCode(code,msg);
+//								return;
 							}
-							Log.e(TAG, request_payment);
-							//mHandler.sendEmptyMessage(0);
+							Log.i(TAG, request_payment);
 						}
 
-						@Override
 						public void onTradeProgress(String goodsKey, String tradeId, int price, int paid, String extra, int resultCode) {
 							Log.i(TAG, "tradeProgress");
+							Log.i(TAG, "tradeProgress" + resultCode + "———" + goodsKey +"========"+ price +"++++++++++++"+ tradeId +">>>>>>>>>"+ extra);
 							if(resultCode == 200){
-								//request_trade = "tradeProgress返回的参数---->扣费成功-----resultCode="+resultCode+"--goodsKey="+goodsKey+"--tradeId="+tradeId+"--price="+price+"--paid="+paid+"--extra="+extra;
 								Log.e(TAG, request_trade);
-								Toast.makeText(m_instance, "buyDiamond" + resultCode + goodsKey + price + tradeId + extra, Toast.LENGTH_SHORT)
-								.show();
-								//mHandler.sendEmptyMessage(1);
+								//Toast.makeText(m_instance, "tradeProgress返回码" + resultCode + "———" + goodsKey + price + tradeId + extra, Toast.LENGTH_SHORT)
+								//.show();
+								successCode = 9000;
+								code = successCode;
+								msg = "购买成功";
+								setCode(code,msg);
+								
+								TDGAVirtualCurrency.onChargeSuccess(mOrderId);
+
 							}else if(resultCode == 203){
-								//request_trade = "tradeProgress返回的参数---->只是短信发送成功-----resultCode="+resultCode+"--goodsKey="+goodsKey+"--tradeId="+tradeId+"--price="+price+"--paid="+paid+"--extra="+extra;
 								Log.e(TAG, request_trade);
-								Toast.makeText(m_instance, "buyDiamond" + resultCode + goodsKey + price + tradeId + extra, Toast.LENGTH_SHORT)
-								.show();
-								//mHandler.sendEmptyMessage(1);
+								successCode = resultCode;
+								code = successCode;
+								msg = "购买成功";
+								setCode(code,msg);
+								//Toast.makeText(m_instance, "tradeProgress返回码" + resultCode + "———" + goodsKey + price + tradeId + extra, Toast.LENGTH_SHORT)
+								//.show();
+//								successCode = resultCode;
 							}
 						}
 					});
 					
-					
-					//Upay调用短信支付接口
-//					Upay up = Upay.getInstance("test_app");
-//					up.pay(goodsKey, extra, new UpayCallback() {
-//					@Override
-//					public void onPaymentResult(String goodsKey, String tradeId, int resultCode, String errorMsg, String extra) {
-//						Log.i(TAG, "paymentResult");
-//						Toast.makeText(m_instance, "paymentresult" + extra + goodsKey + price, Toast.LENGTH_SHORT)
-//						.show();
-//						//扣费成功
-//						int code;
-//						String msg = "购买失败";
-//						if(resultCode==200){
-//						//支付操作成功
-//							code = 9000;
-//							msg = "购买成功";
-//						}else if(resultCode == 110){
-//						//支付取消
-//							code = resultCode;
-//							msg = "购买取消";
-//						}else{
-//						//支付失败
-//							code = resultCode;
-//							msg = "购买失败";	
-//						}
-//						try {
-//							payArgs.put("code", code + "");
-//							payArgs.put("msg", msg);
-//							methodsRun.buyDiamondCallBack(payArgs.toString());
-//						} catch (JSONException e) {
-//							e.printStackTrace();
-//						}
-//					}
-//					@Override
-//					public void onTradeProgress(String goodsKey, String tradeId, int price, int paid, String extra, int resultCode) {
-//						Log.i(TAG, "tradeProgress");
-//						Log.i(TAG, "tradeProgress" + resultCode);
-//						Toast.makeText(m_instance, "onTradeProgress" + extra + goodsKey + price, Toast.LENGTH_SHORT)
-//						.show();
-//						//扣费成功
-//						int code;
-//						String msg = "购买失败";
-//						if(resultCode==200){
-//						//支付操作成功
-//							code = 9000;
-//							msg = "购买成功";
-//						}else if(resultCode == 110){
-//						//支付取消
-//							code = resultCode;
-//							msg = "购买取消";
-//						}else{
-//						//支付失败
-//							code = resultCode;
-//							msg = "购买失败";	
-//						}
-//						try {
-//							payArgs.put("code", code + "");
-//							payArgs.put("msg", msg);
-//							methodsRun.buyDiamondCallBack(payArgs.toString());
-//						} catch (JSONException e) {
-//							e.printStackTrace();
-//						}
-//					}		
-//					});
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});								
 	}
+	
+	
+	public static void setCode(int code,String msg){
+		try {
+			star.payArgs.put("code", code + "");
+			star.payArgs.put("msg", msg);
+			methodsRun.buyDiamondCallBack(payArgs.toString());
+
+	} catch (JSONException e) {
+		e.printStackTrace();
+		}
+	}
+	
+	
+	
 	
 	public static void createSharePicDir() {
 		boolean sdCardExist = Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED);
@@ -255,6 +287,7 @@ public class star extends Cocos2dxActivity {
 			methodsRun.injectOtherDir(dir + File.separator);
 		}
 	}
+	
 
 	static {
 		System.loadLibrary("cocos2djs");
