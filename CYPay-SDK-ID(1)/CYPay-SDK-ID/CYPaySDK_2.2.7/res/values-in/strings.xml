@@ -1,0 +1,243 @@
+﻿<?xml version="1.0"?>
+<resources>
+
+  	<string name="com_cypay_paysdk_loading">Sedang Memuat...</string>
+    <string name="com_mobogenie_paysdk_no_connection">Periksa kembali jaringan Anda</string>
+    <string name="com_mobogenie_paysdk_network_err">Jaringan Error</string>
+    <string name="com_mobogenie_paysdk_signing">Login</string>
+    <string name="com_mobogenie_paysdk_pay_err">Maaf, Anda tidak dapat melakukan pembayaran sekarang. Mohon coba kembali.</string>
+    <string name="com_mobogenie_paysdk_login_failed">Gagal</string>
+    <string name="com_mobogenie_paysdk_loading">Sedang Memuat...</string>
+    <string name="com_mobogenie_paysdk_in_progress">Sedang Memproses...</string>
+    <string name="com_mobogenie_paysdk_mimo_tip">Gunakan %1$s untuk membayar %2$d %3$s?</string>
+    <string name="com_mobogenie_paysdk_mimo_tip_phone">Menggunakan nomor %2$s untuk membayar Rp %1$s?</string>
+    <string name="com_mobogenie_paysdk_mimo_tip_phone_tax">Menggunakan %3$s untuk membayar Rp %1$s? Dengan Pajak 10%%, Jumlah pembayaran adalah Rp %2$s.</string>
+    <string name="com_mobogenie_paysdk_mimo_tip_phone_info">Jenis:</string>
+    <string name="com_mobogenie_paysdk_mimo_error_amount">Error: Jumlah Salah</string>
+    <string name="com_mobogenie_paysdk_type_of_card">Tipe Kartu:</string>
+    <string name="com_mobogenie_paysdk_mimo_atm">Mohon Gunakan Kode Perusahaan dan Pembayaran menggunakan ATM</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint">Mohon Kirimkan SMS [%1$s] ke %2$s untuk membayar.</string>
+    <string name="com_mobogenie_paysdk_mimo_xl">SMS telah dikirim ke ponsel anda. Kode pesanan anda adalah %1$s. Mohon membalas SMS untuk menyelesaikan pembayaran.</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint_tips">Mohon masukkan kode [up %1$s] pada kolom di bawah ini untuk membayar dengan menggunakan nomor Anda.</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint_tips_info">Jika berhasil, pulsa anda akan berkurang secara otomatis</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint_tips_2">Kode verifikasi anda adalah [%1$s]. Catatlah kode [%2$s] kemudian kirimkan kode tersebut ke %3$s. </string>
+    <string name="com_mobogenie_paysdk_mimo_voucher_tips">Mohon masukkan kode yang benar. Perhatian: Perhatikan jumlah nominal yang tertera, dan pastikan jumlah tersebut telah sesuai dengan harga barang.</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint_tips_error">Mohon masukkan kode verifikasi yang benar.</string>
+    <string name="com_mobogenie_paysdk_channels_itemname">Anda akan mendapatkan %1$s</string>
+    <string name="com_mobogenie_paysdk_channels_error_nochannels">Maaf, barang ini tidak dapat dibeli dengan metode pembayaran yang tersedia.</string>
+    <string name="com_mobogenie_paysdk_pay_error">Transaksi tidak berhasil dilakukan.</string>
+    <string name="com_mobogenie_paysdk_pay_success">Anda telah sukses melakukan pembayaran.</string>
+    <string name="com_mobogenie_paysdk_pay_securepayment">SECURE PAYMENT</string>
+    <string name="com_mobogenie_paysdk_channels_mycard_input_pin">Masukkan kode MyCard</string>
+    <string name="com_mobogenie_paysdk_channels_mycard_input_password">Masukkan Password</string>
+    <string name="com_mobogenie_paysdk_channels_mycard_input_null">Kode atau Password anda kosong.</string>
+    <string name="com_cypay_paysdk_channels_mol_pin_no">Nomor PIN Kartu</string>
+    <string name="com_cypay_paysdk_channels_mol_serial_no">Nomor Seri Kartu</string>
+    <string name="com_cypay_paysdk_channels_mol_verify">Verifikasi</string>
+    <string name="com_cypay_paysdk_channels_mol_serial_empty">Mohon masukkan Nomor Serial.</string>
+    <string name="com_cypay_paysdk_channels_mol_pin_empty">Mohon masukkan Nomor PIN .</string>
+    <string name="com_cypay_input_payment">Pembayaran:</string>
+    <string name="com_cypay_input_tips_type1">Anda memilih pembayaran %1$s, mohon masukkan nomor ponsel anda pada kolom di bawah:</string>
+    <string name="com_cypay_input_tips_type2">Anda memilih pembayaran %1$s, mohon masukkan nomor PIN anda pada kolom di bawah:</string>
+    <string name="com_cypay_input_et_hint1_cardnumber">Nomor Seri Kartu</string>
+    <string name="com_cypay_input_et_hint2_pw">PIN ..</string>
+    <string name="com_cypay_input_et_hint3_phone">Nomor Ponsel ..</string>
+    <string name="com_cypay_input_btn_pay">Bayar</string>
+    <string name="com_cypay_input_btn_cancel">Batal</string>
+    <string name="com_cypay_paysdk_channels_indomog_secret_code">Kode Gosok</string>
+    <string name="com_cypay_paysdk_channels_indomog_serial_empty">Mohon masukkan Kode Gosok .</string>
+    <string name="com_mobogenie_paysdk_channels_item_balance">Saldo </string>
+    <string name="com_cypay_paysdk_payment_finished">Selesai</string>
+    <string name="com_cypay_paysdk_payemnt_cancel">Dibatalkan</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint_tips_info_2">Pastikan pengisian anda telah berhasil, kemudian tekan tombol untuk melakukan konfirmasi pembayaran.</string>
+    <string name="com_cypay_paysdk_ngnotice">Mohon masukkan nomor seri kartu dan nomor PIN kartu</string>
+    <string name="com_cypay_paysdk_mimopay_error_code_tip">Kode PIN telah digunakan atau tidak tersedia</string>
+    <string name="com_cypay_paysdk_mimopay_error_phone_no">Nomor ponsel tidak dapat digunakan. </string>
+
+    <item name="bank" type="id"/>
+
+    <string name="com_cypay_paysdk_string_user_center">User Center</string>
+    <string name="com_cypay_paysdk_string_transaction_details">Detail Transaksi</string>
+    <string name="com_cypay_paysdk_string_transaction_detail">Riwayat Transaksi</string>
+    <string name="com_cypay_paysdk_string_charge_detail">Riwayat Pengisian</string>
+    <string name="com_cypay_paysdk_string_manage_account">Manajemen Akun</string>
+    <string name="com_cypay_paysdk_string_user_service">Customer Service</string>
+    <string name="com_cypay_paysdk_string_question_answer">FAQ</string>
+    <string name="com_cypay_paysdk_login_tip">User Login telah ada </string>
+    <string name="com_cypay_paysdk_user_name">Username</string>
+    <string name="com_cypay_paysdk_new_pwd">Password</string>
+    <string name="com_cypay_paysdk_retype_pwd">Ulangi Password</string>
+    <string name="com_cypay_paysdk_create_user">Register</string>
+    <string name="com_cypay_paysdk_cc_month">Bulan</string>
+   	<string name="com_cypay_paysdk_cc_year">Tahun</string>
+    <string name="com_cypay_paysdk_cc_cvv">CVV</string>
+    <string name="com_cypay_paysdk_cc_number">Nomor Kartu Kredit</string>
+    <string name="com_cypay_paysdk_cc_payment_tip">Pembayaran dengan Kartu Kredit</string>
+    <string name="com_cypay_paysdk_cc_pwd_tip">Langkah 1: Mohon untuk menyelesaikan verifikasi dari nomor kartu anda:</string>
+    <string name="com_cypay_paysdk_cc_new_pwd">Password Baru</string>
+    <string name="com_cypay_paysdk_cc_retype_pwd">Ulangi Password Baru</string>
+    <string name="com_cypay_paysdk_cc_userid">ID:</string>
+    <string name="com_cypay_paysdk_cc_need_pwd">Ingat Password? </string>
+    <string name="com_cypay_paysdk_cc_never">Ya</string>
+    <string name="com_cypay_paysdk_cc_thirty_min">Ya, selama 30 menit</string>
+    <string name="com_cypay_paysdk_cc_everytime">Tidak Pernah</string>
+    <string name="com_cypay_paysdk_cc_agree"><u>Terms and Conditions</u></string>
+    <string name="com_cypay_paysdk_find_cvv">Kartu CVV Disini</string>
+    <string name="com_cypay_paysdk_verify_cc_error">Verifikasi gagal, Mohon cek kembali informasi kartu Anda</string>
+    <string name="com_cypay_paysdk_request_bounds_card_err">Terjadi kesalahan, Mohon cek koneksi Anda dan coba kembali. </string>
+    <string name="com_cypay_paysdk_payment_err">Pembayaran Gagal, Mohon cek kembali koneksi Anda. </string>
+    <string name="com_cypay_paysdk_login_bind_err">Login Gagal, Mohon cek kembali koneksi Anda. </string>
+    <string name="com_cypay_paysdk_subimt">Kirim</string>
+    <string name="com_cypay_paysdk_goto_pay">Bayar</string>
+    <string name="com_cypay_paysdk_retry">Coba Kembali</string>
+    <string name="com_cypay_paysdk_payment_success">Pembayaran Sukses</string>
+    <string name="com_cypay_paysdk_retreive_pwd">Reset Password</string>
+    <string name="com_cypay_paysdk_bind_card_fail">Gagal, Mohon cek kembali koneksi Anda. </string>
+    <string name="com_cypay_paysdk_pwd_retype_rule">Ini adalah Password Pembayaran baru Anda. </string>
+    <string name="com_cypay_paysdk_pwd_different">Password tidak cocok, Mohon coba kembali. </string>
+    <string name="com_cypay_paysdk_card_input">Selesaikan Info Kartu</string>
+    <string name="com_cypay_paysdk_bind_card_success">Selesai!</string>
+
+    <string name="com_cypay_paysdk_give_up">Belum menghubungkan akun kartu Anda?</string>
+    <string name="com_cypay_paysdk_give_up_register">Belum mendaftar?</string>
+    <string name="com_cypay_paysdk_unbind_card_tip">Memutuskan hubungan dengan kartu yang berakhir dengan nomor %1$s ?</string>
+    <string name="com_cypay_paysdk_enter_pwd_tip">Mohon masukkan password Anda:</string>
+    <string name="com_cypay_paysdk_empty_bind_card">Tambahkan kartu baru untuk melanjutkan pembayaran</string>
+    <string name="com_cypay_paysdk_yes">Yes</string>
+    <string name="com_cypay_paysdk_no">No</string>
+    <string name="com_cypay_paysdk_add_credit_card">+ Pembayaran dengan kartu lain</string>
+    <string name="com_cypay_paysdk_received_someting">Anda telah menerima %1$s</string>
+    <string name="com_cypay_paysdk_sign_s_bind_fail">Pendaftaran berhasil, tetapi gagal dalam menghubungan dengan kartu. Penyebab:</string>
+    
+    
+    
+    <!-- CHANGED STRINGS -->
+	<string name="com_cypay_paysdk_change_pwd_success">Berhasil!</string>
+	<string name="com_cypay_paysdk_topup_my_wallet">Isi Ulang dompet</string>
+	<string name="com_mobogenie_paysdk_channels_item_my_wallet">Saldo dompet</string>
+    <string name="com_cypay_paysdk_genies">Cents</string>
+    <string name="com_cypay_paysdk_genies_need">(%1$s Cents)</string>
+	<string name="com_cypay_paysdk_bind_cc">Daftar dan dapatkan %1$s Cents Gratis!</string>
+    <string name="com_cypay_paysdk_pwd_rule">Masukkan inputan 6-20 karakter</string>	
+	
+    <string name="com_cypay_paysdk_cc_pwd_tip_two">Langkah 2: Masukkan inputan password 6-20 karakter£º</string>
+    <string name="com_cypay_paysdk_balance_not_enough">Cents Tidak Cukup.</string>
+    <string name="com_cypay_paysdk_username_rule">Masukkan 3-15 karakter</string>
+    <string name="com_cypay_paysdk_unconfumed_tip">Pembelian Gagal. Jumlah yang sama telah ditambahkan ke Saldo dompet Anda.</string>
+    <string name="com_cypay_paysdk_part_payment_error">Jumlah tidak mencukupi, Jumlah tersebut akan diakumulasikan ke saldo dompet Anda. Gunakan akun dompet untuk melakukan pembayaran.</string>
+    <string name="com_cypay_paysdk_balance_tip">Jumlah pembayaran yang berlebih akan diakumulasikan ke saldo dompet Anda</string>
+	<!-- NEW STRINGS -->
+	<string name="com_cypay_paysdk_need_genies">Cents Dibutuhkan£º</string>
+	<string name="com_cypay_paysdk_available_balance">Cents Sekarang£º</string>
+	<string name="com_cypay_paysdk_recharge_unsuccessful">Pengisian tidak berhasil dilakukan.</string>
+	<string name="com_cypay_paysdk_recharge_successful">Pengisian Berhasil.</string>
+	<string name="com_cypay_paysdk_recharge_processing">Sedang memproses, harap tunggu¡­</string>
+	
+	<string name="com_cypay_paysdk_string_wrong_password">Password Salah</string>
+	<string name="com_cypay_paysdk_string_password_not_match">6-20 digit angka atau karakter</string>
+	<string name="com_cypay_paysdk_string_username_not_match">3-15 digit angka atau karakter</string>
+	<string name="com_cypay_paysdk_string_twopassword_not_match">Password tidak cocok</string>
+	<string name="com_cypay_paysdk_string_email_not_match">Email tidak cocok</string>
+	
+	<!-- FortumoAPI -->
+	<string name="com_cypay_paysdk_string_fortumo_api_loading">Biaya akan dibebankan ke pulsa telepon Anda.</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_success">Pembayaran Berhasil</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_failed">Pembayaran Gagal. Cek kembali sisa saldo Anda.</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_wait">Maaf, proses membutuhkan waktu lebih lama. Mohon coba beberapa saat lagi.</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_btn_confirm">Setuju</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_btn_cancel">Batal</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_tv_info">Info</string>
+	
+	<!-- UserCenter -->
+	<string name="com_cypay_paysdk_string_uercenteractivity_balance_tv">Saldo</string>
+	<string name="com_cypay_paysdk_string_uercenteractivity_cent_tv">Cents</string>
+	<string name="com_cypay_paysdk_string_uercenterfragment_api_tv_info">Info</string>
+	
+	<string name="com_cypay_paysdk_string_usercenterfragment_user_center">User Center</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_transaction_details">Detail\nTransaksi\n</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_customer_service">Customer\nService\n</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_transaction_detail">Histori\nTransaksi\n</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_charge_detail">Histori\nIsi Ulang\n</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_manage_account">Account\nManagement\n</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_security_center">Security\nCenter\n</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_user_service">Customer\nService\n</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_question_answer">\nFAQ\n</string>
+    
+    <string name="com_cypay_paysdk_string_transactionserachfragment_title_recharge">Histori Isi Ulang</string>
+    <string name="com_cypay_paysdk_string_transactionserachfragment_title_transaction">Histori Transaksi</string>
+    <string name="com_cypay_paysdk_string_transactionserachfragment_search_btn">Cari</string>
+    <string name="com_cypay_paysdk_string_transactionserachfragment_item_label">Nama Barang</string>
+    <string name="com_cypay_paysdk_string_transactionserachfragment_payment_date">Tanggal Pembayaran</string>
+    <string name="com_cypay_paysdk_string_transactionserachfragment_choose_correct_time">Pilihlah tanggal yang benar.</string>
+    
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_orderid_label">ID Pesanan</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_appname_label">Nama Aplikasi</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_productname_label">Nama Produk</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_amount_label">Jumlah</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_channel_label">Channel</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_state_label">Status</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_time_label">Waktu</string>
+    
+	
+	
+    <string name="com_cypay_paysdk_string_manageaccountfragment_title">Manajemen Akun</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_username_hint">Username</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_password_hint">Password</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_login_btn">Login</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_regist_linear">Daftar Akun Baru</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_retype_password_hint">Ketik ulang Password</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_email_hint">Email</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_regist_notice">Tidak wajib, Digunakan untuk mengulang Password.</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_regist_btn">Daftar</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_security_btn">Security Center</string>
+    
+    
+    <string name="com_cypay_paysdk_string_securityfragment_change_password">\nGanti\nPassword\n</string>
+	<string name="com_cypay_paysdk_string_securityfragment_bind_email">\nHubungkan\nEmail\n</string>
+	<string name="com_cypay_paysdk_string_securityfragment_recover_password">\nKembalikan\nPassword\n</string>
+	<string name="com_cypay_paysdk_string_securityfragment_old_password_hint">Password lama</string>
+    <string name="com_cypay_paysdk_string_securityfragment_new_password_hint">Password baru</string>
+    <string name="com_cypay_paysdk_string_securityfragment_retype_password_hint">Ketik ulang Password</string>
+    <string name="com_cypay_paysdk_string_securityfragment_change_password_btn">Ganti Password</string>
+    <string name="com_cypay_paysdk_string_securityfragment_bind_email_notify">Pengumuman:\nCek inbox Email Anda dan klik pada tautan untuk mengaktifkan akun, tautan hanya berlaku selama 24 jam.</string>
+    <string name="com_cypay_paysdk_string_securityfragment_bindemail_btn">Hubungkan Email</string>
+    <string name="com_cypay_paysdk_string_securityfragment_recover_password_btn">Kembalikan Password</string>
+    
+    <string name="com_cypay_paysdk_string_customservicefragment_title">Customer Service</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_question_hint">Masukkan pertanyaan Anda, kami akan membalas secepatnya.</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_phoneno_hint">Nomor Telepon.</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_submit_btn">Kirim</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_submit_questions">Pertanyaan Terkirim</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_questionemty_toast">Pertanyaan tidak boleh kosong</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_submit_success_toast">Pengiriman Berhasil</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_submit_success_failed">Pengiriman Gagal</string>
+    
+    <string name="com_cypay_paysdk_string_transactionfragment_search_toast">Tidak ada data</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_loginfirst_toast">Mohon Login lebih dulu.</string>
+    <string name="com_cypay_paysdk_string_securityfragment_emailsended_toast">Email telah terkirim.</string>
+    <string name="com_cypay_paysdk_string_securityfragment_loginsuccess_toast">Login Sukses</string>
+    <string name="com_cypay_paysdk_string_securityfragment_about_us">Tentang Kami</string>
+    
+    <string name="com_cypay_paysdk_string_forgot_pwd">Lupa?</string>
+    <string name="com_cypay_paysdk_string_wallet_make_sure">Bayar dengan menggunakan Saldo dompet?</string>
+    <string name="com_cypay_paysdk_mobile_payment_tip">Biaya akan dibebankan ke pulsa telepon Anda.</string>
+
+    <string name="com_cypay_paysdk_string_dialog_notice_txt">Kami menunggu konfirmasi pembayaran Anda.</string>
+    <string name="com_cypay_paysdk_string_dialog_notice_txt1">Apakah Anda telah menerima SMS? Mohon melakukan konfirmasi sesuai dengan SMS yang telah Anda terima.</string>
+    <string name="com_cypay_paysdk_string_dialog_notice_txt2">Mohon pastikan koneksi jaringan Anda dalam keadaan baik.</string>
+    <string name="com_cypay_paysdk_string_dialog_notice_txt3">Mohon tunggu, operator belum menerima pembayaran Anda.</string>
+    
+    <string name="com_cypay_paysdk_string_dialog_confirm_btn">Coba Lagi</string>
+    <string name="com_cypay_paysdk_string_dialog_cancel_btn">Batal</string>
+    <string name="com_cypay_paysdk_string_dialog_confirm_btn_ok">OK</string>
+    <string name="com_cypay_paysdk_string_dialog_cancel_btn_back">Kembali</string>
+    <string name="com_cypay_paysdk_string_dialog_cancel_notice">Jika pembayaran tetap terjadi setelah pembatalan, kami akan mengembalikan pembayaran Anda. Mohon kontak ke Email: cypay_service@wall-et.net</string>
+
+    
+    <string name="com_cypay_paysdk_find_password_notice">Pemberitahuan:\nTerkirim ke Email Anda, Mohon klik pada Link untuk mengembalikan password Anda.</string>
+    <string name="com_cypay_paysdk_update_password_success_notice">Perubahan Berhasil!</string>
+    <string name="com_cypay_paysdk_regist_account_success_notice">Registrasi Berhasil</string>
+    <string name="com_cypay_paysdk_email_sent_success_notice">Email telah terkirim</string>
+    <string name="com_cypay_paysdk_already_bound__notice">Telah dihubungkan</string>
+    <string name="com_cypay_paysdk_not_bound__notice">Email belum terhubung</string>
+</resources>

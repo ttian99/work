@@ -1,0 +1,227 @@
+﻿<?xml version="1.0"?>
+<resources>
+
+    <string name="com_cypay_paysdk_loading">กำลังโหลด</string>
+    <string name="com_mobogenie_paysdk_no_connection">การเช็คเชื่อมต่อเครือข่ายของคุณ</string>
+    <string name="com_mobogenie_paysdk_network_err">ข้อผิดพลาดเครือข่าย</string>
+    <string name="com_mobogenie_paysdk_signing">เข้าสู่ระบบ</string>
+    <string name="com_mobogenie_paysdk_pay_err">ขออภัย คุณไม่สามารถจ่ายได้ตอนนี้ กรุณาลองหลังจากนั้น</string>
+    <string name="com_mobogenie_paysdk_login_failed">ล้มเหลว</string>
+    <string name="com_mobogenie_paysdk_loading">กำลังโหลด </string>
+    <string name="com_mobogenie_paysdk_in_progress">ในระหว่างขั้นตอน</string>
+    <string name="com_mobogenie_paysdk_mimo_tip">การใช้ %1$s ชำระ %2$d %3$s?</string>
+    <string name="com_mobogenie_paysdk_mimo_tip_phone">ใช้หมายเลข %2$s ที่ระบุไว้ให้จ่ายเงิน Rp %1$s?</string>
+    <string name="com_mobogenie_paysdk_mimo_tip_phone_tax">ใช้จำนวนเงิน %3$s ที่ระบุไว้ให้จ่าย Rp %1$s?ภาษี 10%%, จำนวนเงินรวม Rp %2$s.</string>
+    <string name="com_mobogenie_paysdk_mimo_tip_phone_info">ประเภท:</string>
+    <string name="com_mobogenie_paysdk_mimo_error_amount">ข้อผิดพลาด จํานวนเงินที่ไม่ถูกต้อง</string>
+    <string name="com_mobogenie_paysdk_type_of_card">ประเภทบัตร</string>
+    <string name="com_mobogenie_paysdk_mimo_atm">โปรดใช้ Kode Perusahaan and pay โดย ATM </string>
+    <string name="com_mobogenie_paysdk_mimo_upoint">กรุณาส่ง SMS [%1$s] ไป %2$s สำหรับการชำระเงิน</string>
+    <string name="com_mobogenie_paysdk_mimo_xl">ส่งไปที่โทรศัพท์มือถือของคุณแล้ว, สั่งซื้อ %1$s.กรุณาตอบกลับตามคำแนะนำในSMS.</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint_tips"> หรือกรุณาป้อน [up %1$s] ด้านล่างเพื่อชำระเงินโดยใช้ตัวเลขของคุณเอง.</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint_tips_info">หากสำเร็จ การชำระเงินจะตัดจากยอดเงินของคุณอัตโนมัติ</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint_tips_2"> รหัสยืนยันเป็น [%1$s]. คัดลอก [%2$s] และส่ง SMS ไป %3$s. </string>
+    <string name="com_mobogenie_paysdk_mimo_voucher_tips"> กรุณาใส่รหัสลับที่ถูกต้อง. โปรดตรวจสอบจำนวนเงินPINเป็นเช่นเดียวกับราคาสินค้า.</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint_tips_error"> กรุณาใส่รหัสตรวจสอบที่ถูกต้อง</string>
+    <string name="com_mobogenie_paysdk_channels_itemname"> คุณจะได้รับ %1$s</string>
+    <string name="com_mobogenie_paysdk_channels_error_nochannels"> ขออภัยรายการนี้จะไม่รองรับโดยวิธีการชำระเงินใด ๆ</string>
+    <string name="com_mobogenie_paysdk_pay_error"> การทำรายการไม่สำเร็จ.</string>
+    <string name="com_mobogenie_paysdk_pay_success"> คุณได้ทำชำระเงินที่ประสบความสำเร็จ</string>
+    <string name="com_mobogenie_paysdk_pay_securepayment"> ชำระเงินที่ปลอดภัย</string>
+    <string name="com_mobogenie_paysdk_channels_mycard_input_pin"> ใส่รหัส MyCard </string>
+    <string name="com_mobogenie_paysdk_channels_mycard_input_password"> ใส่รหัสผ่าน</string>
+    <string name="com_mobogenie_paysdk_channels_mycard_input_null"> รหัสหรือรหัสผ่านเป็นโมฆะ</string>
+    <string name="com_cypay_paysdk_channels_mol_pin_no"> หมายเลขรหัสบัตร</string>
+    <string name="com_cypay_paysdk_channels_mol_serial_no"> มายเลขบัต</string>
+    <string name="com_cypay_paysdk_channels_mol_verify"> ตรวจสอบ</string>
+    <string name="com_cypay_paysdk_channels_mol_serial_empty"> กรุณาป้อนSerial No .</string>
+    <string name="com_cypay_paysdk_channels_mol_pin_empty"> กรุณาป้อนPin No .</string>
+    <string name="com_cypay_input_payment"> การชำระเงิน</string>
+    <string name="com_cypay_input_tips_type1"> คุณได้เลือกชำระเงิน%1$s ใส่หมายเลขโทรศัพท์ของคุณด้านล่าง</string>
+    <string name="com_cypay_input_tips_type2"> คุณได้เลือกชำระเงิน%1$sใส่PINด้านล่าง</string>
+    <string name="com_cypay_input_et_hint1_cardnumber"> หมายเลขบัตร</string>
+    <string name="com_cypay_input_et_hint2_pw">PIN ..</string>
+    <string name="com_cypay_input_et_hint3_phone"> หมายเลขโทรศัพท์ ..</string>
+    <string name="com_cypay_input_btn_pay"> ชำระเงิน</string>
+    <string name="com_cypay_input_btn_cancel"> ยกเลิก</string>
+    <string name="com_cypay_paysdk_channels_indomog_secret_code"> รหัสรอยขีดข่วน</string>
+    <string name="com_cypay_paysdk_channels_indomog_serial_empty"> กรุณาใส่รหัสรอยขีดข่วน</string>
+    <string name="com_mobogenie_paysdk_channels_item_balance">BALANCE </string>
+    <string name="com_cypay_paysdk_payment_finished"> เสร็จสิ้น</string>
+    <string name="com_cypay_paysdk_payemnt_cancel"> ยกเลิก</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint_tips_info_2"> กรุณายืนยันการเติมเงินจะประสบความสำเร็จแล้วกดปุ่มเพื่อยืนยันการชำระเงิน</string>
+    <string name="com_cypay_paysdk_ngnotice">กรุณาใส่หมายเลขบัตรและหมายเลข pin </string>
+    <string name="com_cypay_paysdk_unconfumed_tip"> ข้อผิดพลาดในการซื้อจำนวนเงินที่เพิ่มเข้าไปในยอดคงเหลือ Wall-ET ของคุณ </string>
+    <string name="com_cypay_paysdk_part_payment_error"> จำนวนเงินที่คุณใช้จ่ายไม่เพียงพอ ยอดเงินจะถูกโอนไปWall-ETของคุณ การใช้ผนังWall-ETของคุณที่จะจ่าย</string>
+    <string name="com_cypay_paysdk_balance_tip"> จำนวนเงินที่เกินจะถูกโอนไปยอดเงินWall-ETของคุณ</string>
+    <string name="com_cypay_paysdk_mimopay_error_code_tip"> รหัสPinถูกนำมาใช้หรือใช้งานไม่ได้</string>
+    <string name="com_cypay_paysdk_mimopay_error_phone_no"> หมายเลขโทรศัพท์ไม่พร้อมใช้</string>
+
+    <item name="bank" type="id"/>
+
+    <string name="com_cypay_paysdk_string_user_center"> ศูนย์ผู้ใช้</string>
+    <string name="com_cypay_paysdk_string_transaction_details"> รายละเอียดการทำรายการ</string>
+    <string name="com_cypay_paysdk_string_transaction_detail"> ประวัติการทำรายการ</string>
+    <string name="com_cypay_paysdk_string_charge_detail"> ประวัติการเติมเงิน</string>
+    <string name="com_cypay_paysdk_string_manage_account"> การจัดการบัญชี</string>
+    <string name="com_cypay_paysdk_string_user_service"> บริการลูกค้า</string>
+    <string name="com_cypay_paysdk_string_question_answer">FAQ</string>
+    <string name="com_cypay_paysdk_login_tip"> มีผู้ใช้เข้าสู่ระบบ </string>
+    <string name="com_cypay_paysdk_user_name"> ชื่อผู้ใช้งาน</string>
+    <string name="com_cypay_paysdk_new_pwd"> รหัสผ่าน</string>
+    <string name="com_cypay_paysdk_retype_pwd"> พิมพ์ใหม่รหัสผ่าน</string>
+    <string name="com_cypay_paysdk_create_user"> สมัครสมาชิก</string>
+    <string name="com_cypay_paysdk_cc_month"> เดือน</string>
+    <string name="com_cypay_paysdk_cc_year"> ปี</string>
+    <string name="com_cypay_paysdk_cc_cvv">CVV</string>
+    <string name="com_cypay_paysdk_cc_number"> หมายเลขบัตรเครดิต</string>
+    <string name="com_cypay_paysdk_cc_payment_tip"> ชำระผ่านบัตรเครดิต</string>
+    <string name="com_cypay_paysdk_cc_pwd_tip"> ขั้นตอนที่ 1: กรุณากรอกหมายเลขบัตรสำหรับการตรวจสอบ</string>
+    <string name="com_cypay_paysdk_cc_new_pwd"> รหัสผ่านใหม่</string>
+    <string name="com_cypay_paysdk_cc_retype_pwd"> พิมพ์อีกครั้งรหัสผ่านใหม่</string>
+    <string name="com_cypay_paysdk_cc_userid">ID:</string>
+    <string name="com_cypay_paysdk_cc_need_pwd"> จำรหัสผ่าน? </string>
+    <string name="com_cypay_paysdk_cc_never">ใช่</string>
+    <string name="com_cypay_paysdk_cc_thirty_min"> ใช่ สำหรับ 30 นาที</string>
+    <string name="com_cypay_paysdk_cc_everytime"> อย่า</string>
+    <string name="com_cypay_paysdk_cc_agree"><u> ข้อตกลงและเงื่อนไข</u></string>
+    <string name="com_cypay_paysdk_find_cvv">หมายเลข CVV อยู่ที่นี่</string>
+    <string name="com_cypay_paysdk_verify_cc_error"> การตรวจสอบที่ล้มเหลวโปรดตรวจสอบข้อมูลบัตร</string>
+    <string name="com_cypay_paysdk_request_bounds_card_err"> ล้มเหลว ตรวจสอบการเชื่อมต่อและแอมป์; ลองอีกครั้ง</string>
+    <string name="com_cypay_paysdk_payment_err"> การชำระเงินล้มเหลว ตรวจสอบการเชื่อมต่อ </string>
+    <string name="com_cypay_paysdk_login_bind_err"> เข้าสู่ระบบล้มเหลว ตรวจสอบการเชื่อมต่อ </string>
+    <string name="com_cypay_paysdk_subimt"> อ่อนน้อม</string>
+    <string name="com_cypay_paysdk_goto_pay"> ชำระเงิน</string>
+    <string name="com_cypay_paysdk_retry"> ลองใหม่อีกครั้ง</string>
+    <string name="com_cypay_paysdk_payment_success">การชำระเงินที่สำเร็จ </string>
+    <string name="com_cypay_paysdk_retreive_pwd"> รีเซ็ตรหัสผ่าน</string>
+    <string name="com_cypay_paysdk_bind_card_fail"> ล้มเหลว กรุณาตรวจสอบการเชื่อมต่อ</string>
+    <string name="com_cypay_paysdk_pwd_retype_rule"> นี้จะเป็นรหัสผ่านการชำระเงินใหม่ของคุณ</string>
+    <string name="com_cypay_paysdk_pwd_different"> รหัสผ่านไม่ตรงกับ โปรดลองอีกครั้ง</string>
+    <string name="com_cypay_paysdk_card_input"> สมบูรณ์ข้อมูลบัตร </string>
+    <string name="com_cypay_paysdk_bind_card_success"> เสร็จแล้ว ขอแสดงความยินดี</string>
+    <string name="com_cypay_paysdk_give_up"> การเชื่อมโยงบัตรธนาคารของคุณ?</string>
+    <string name="com_cypay_paysdk_give_up_register"> สมัครสมาชิก?</string>
+    <string name="com_cypay_paysdk_unbind_card_tip"> ยกเลิกการเชื่อมโยงบัตรที่ลงท้ายด้วย%1$s ?</string>
+    <string name="com_cypay_paysdk_enter_pwd_tip"> กรุณาใส่รหัสผ่านของคุณ:</string>
+    <string name="com_cypay_paysdk_empty_bind_card"> เพิ่มบัตรใหม่เพื่อดำเนินการต่อชำระเงิน</string>
+    <string name="com_cypay_paysdk_yes"> ใช่</string>
+    <string name="com_cypay_paysdk_no"> ไม่ใช่</string>
+    <string name="com_cypay_paysdk_add_credit_card">+ ชำระเงินด้วยบัตรอื่น</string>
+    <string name="com_cypay_paysdk_received_someting"> คุณได้รับ %1$s</string>
+    <string name="com_cypay_paysdk_sign_s_bind_fail">ลงทะเบียนสำเร็จ แต่ผูกบัตรล้มเหลว เพราะ:</string>
+
+    
+    
+    
+    <!-- CHANGED STRINGS -->
+	<string name="com_cypay_paysdk_change_pwd_success">ที่ประสบความสำเร็จ</string>
+	<string name="com_cypay_paysdk_topup_my_wallet">ชาร์ร้อย</string>
+	<string name="com_mobogenie_paysdk_channels_item_my_wallet">ชำระเงินด้วยร้อย</string>
+    <string name="com_cypay_paysdk_genies">CENTS</string>
+    <string name="com_cypay_paysdk_genies_need">(%1$s CENTS)</string>
+	<string name="com_cypay_paysdk_bind_cc">ลงทะเบียนและรับ %1$s ฟรีเซนต์! เพื่อใช้ในการซื้อครั้งต่อไป</string>
+    <string name="com_cypay_paysdk_pwd_rule">6-20 ใส่ตัวอักษร</string>	
+    <string name="com_cypay_paysdk_cc_pwd_tip_two">ขั้นที่ 2: ใส่รหัสผ่านใหม่ 6-20 ตัวอักษร:</string>
+    <string name="com_cypay_paysdk_balance_not_enough">เซ็นต์ไม่เพียงพอ</string>
+    <string name="com_cypay_paysdk_username_rule">3-15 ใส่ตัวอักษร</string>
+	<!-- NEW STRINGS -->
+	<string name="com_cypay_paysdk_need_genies">เซ็นต์สิ่งที่ต้องการ</string>
+	<string name="com_cypay_paysdk_available_balance">เซ็นต์ปัจจุบัน:</string>
+	<string name="com_cypay_paysdk_recharge_unsuccessful">ชาร์จไม่ประสบความสำเร็จ</string>
+	<string name="com_cypay_paysdk_recharge_successful">การเติมเงินที่ประสบความสำเร็จ</string>
+	<string name="com_cypay_paysdk_recharge_processing">การประมวลผลโปรดรอสักครู่ …</string>
+	
+	
+
+	
+	<string name="com_cypay_paysdk_string_wrong_password">รหัสผ่านที่ไม่ถูกต้อง</string>
+	<string name="com_cypay_paysdk_string_password_not_match">6-20 ตัวเลขที่มีตัวเลขหรือตัวอักษร</string>
+	<string name="com_cypay_paysdk_string_username_not_match">3-15 ตัวเลขที่มีตัวเลขหรือตัวอักษร</string>
+	<string name="com_cypay_paysdk_string_twopassword_not_match">รหัสผ่านที่ไม่ตรงกับ</string>
+	<string name="com_cypay_paysdk_string_email_not_match">อีเมลไม่ตรงกัน</string>
+	
+	
+	
+	<!-- FortumoAPI -->
+	<string name="com_cypay_paysdk_string_fortumo_api_loading">กรุณารอสักครู่ เรากำลังประมวลผลคำขอของคุณ</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_success">ที่ประสบความสำเร็จการชำระเงิน</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_failed">การชำระเงินล้มเหลวกรุณาตรวจสอบยอดเงินของคุณ</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_wait">ขออภัยการเรียกเก็บเงินใช้เวลานานกว่า expented กรุณาตรวจสอบผลในภายหลัง</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_btn_confirm">ยืนยัน</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_btn_cancel">ยกเลิก</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_tv_info">ข้อมูล</string>
+	
+	
+	
+	
+	
+	<!-- UserCenter -->
+	
+	<string name="com_cypay_paysdk_string_uercenteractivity_balance_tv">ยอดคงเหลือ</string>
+	<string name="com_cypay_paysdk_string_uercenteractivity_cent_tv">Cents</string>
+	<string name="com_cypay_paysdk_string_uercenterfragment_api_tv_info">ข้อมูล</string>
+	
+	<string name="com_cypay_paysdk_string_usercenterfragment_user_center">ศูนย์ผู้ใช้</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_transaction_details">รายละเอียดการทำธุรกรรม</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_customer_service">บริการลูกค้า</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_transaction_detail">ประวัติความเป็นมาการทำธุรกรรม</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_charge_detail">ประวัติความเป็นมาการเติมเงิน</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_manage_account">การจัดการบัญชี</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_security_center">Security\nCenter\n</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_user_service">บริการลูกค้า</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_question_answer">\nFAQ\n</string>
+    
+    <string name="com_cypay_paysdk_string_transactionserachfragment_title_recharge">ประวัติความเป็นมาการเติมเงิน</string>
+    <string name="com_cypay_paysdk_string_transactionserachfragment_title_transaction">ประวัติความเป็นมาการทำธุรกรรม</string>
+    <string name="com_cypay_paysdk_string_transactionserachfragment_search_btn">ค้นหา</string>
+    <string name="com_cypay_paysdk_string_transactionserachfragment_item_label">Item Name</string>
+    <string name="com_cypay_paysdk_string_transactionserachfragment_payment_date">Payment Date</string>
+    <string name="com_cypay_paysdk_string_transactionserachfragment_choose_correct_time">โปรดเลือกวันที่ถูกต้อง</string>
+    
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_orderid_label">การสั่งซื้อสินค้า</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_appname_label">AppName</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_productname_label">ProductName</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_amount_label">จํานวนเงิน</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_channel_label">ช่องทาง</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_state_label">รัฐ</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_time_label">เวลา</string>
+    
+    <string name="com_cypay_paysdk_string_manageaccountfragment_title">การจัดการบัญชี</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_username_hint">ชื่อผู้ใช้</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_password_hint">รหัสผ่าน</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_login_btn">เข้าสู่ระบบ</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_regist_linear">ลงทะเบียนบัญชีใหม่</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_retype_password_hint">พิมพ์รหัสผ่าน</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_email_hint">อีเมล์</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_regist_notice">ไม่บังคับใช้สำหรับการกู้คืนรหัสผ่าน</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_regist_btn">สมัครสมาชิก</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_security_btn">ศูนย์รักษาความปลอดภัย</string>
+    
+    
+    
+    <string name="com_cypay_paysdk_string_securityfragment_change_password">เปลี่ยนรหัสผ่าน</string>
+	<string name="com_cypay_paysdk_string_securityfragment_bind_email">อีเมล์ผูก</string>
+	<string name="com_cypay_paysdk_string_securityfragment_recover_password">ลืมรหัสผ่าน</string>
+	<string name="com_cypay_paysdk_string_securityfragment_old_password_hint">รหัสผ่านเก่า</string>
+    <string name="com_cypay_paysdk_string_securityfragment_new_password_hint">รหัสผ่านใหม่</string>
+    <string name="com_cypay_paysdk_string_securityfragment_retype_password_hint">พิมพ์รหัสผ่าน</string>
+    <string name="com_cypay_paysdk_string_securityfragment_change_password_btn">เปลี่ยนรหัสผ่าน</string>
+    <string name="com_cypay_paysdk_string_securityfragment_bind_email_notify">การแจ้งเตือน:\nโปรดไปที่กล่องจดหมายของคุณและคลิกที่ลิงค์ที่ให้ไว้เพื่อเปิดใช้งานภายใน 24 ชั่วโมง</string>
+    <string name="com_cypay_paysdk_string_securityfragment_bindemail_btn">อีเมล์ผูก</string>
+    <string name="com_cypay_paysdk_string_securityfragment_recover_password_btn">ลืมรหัสผ่าน</string>
+    
+    <string name="com_cypay_paysdk_string_customservicefragment_title">บริการลูกค้า</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_question_hint">กรุณาป้อนคำถามของคุณเราจะตอบกลับภายใน 2 วันทำการ</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_phoneno_hint">หมายเลขโทรศัพท์</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_submit_btn">ส่ง</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_submit_questions">คำถามที่ส่ง</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_questionemty_toast">คำถามที่ไม่ว่างเปล่า</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_submit_success_toast">ส่งที่ประสบความสำเร็จ</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_submit_success_failed">ส่งล้มเหลว</string>
+    
+    <string name="com_cypay_paysdk_string_transactionfragment_search_toast">ไม่มีการบันทึกเป็น</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_loginfirst_toast">กรุณาเข้าสู่ระบบ</string>
+    <string name="com_cypay_paysdk_string_securityfragment_emailsended_toast">อีเมล์ที่ได้รับการส่ง</string>
+    <string name="com_cypay_paysdk_string_securityfragment_loginsuccess_toast">เข้าสู่ระบบที่ประสบความสำเร็จ</string>
+</resources>

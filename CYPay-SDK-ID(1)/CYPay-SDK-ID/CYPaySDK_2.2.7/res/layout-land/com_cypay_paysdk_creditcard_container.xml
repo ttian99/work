@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/com_cypay_activity_usercenter_root"
+    android:background="@drawable/color_shape"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical"
+    >
+    
+     <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+            
+         
+         <RelativeLayout 
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             >
+             
+             
+              <LinearLayout 
+                 android:id="@+id/back_linear"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center_vertical|left"
+                 android:layout_alignParentTop="true"
+                 android:layout_marginTop="2dp"
+                 android:layout_marginLeft="5dp"
+                 >
+                 
+                 <ImageView 
+                     android:src="@drawable/com_cpay_paysdk_back_arrow"
+                     android:layout_marginTop="1.4dp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     />
+                 
+                 <TextView 
+                     android:layout_marginLeft="5dp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:textSize="@dimen/com_cypay_paysdk_back_text_font_size"
+                     android:textColor="@color/white"
+                     android:text="Back"
+                     />
+             </LinearLayout>
+             
+             
+             
+             <LinearLayout 
+             android:id="@+id/title_linear"
+             android:layout_marginTop="10dp"
+             android:layout_below="@+id/back_linear"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:orientation="vertical"
+             >
+                 
+                 
+                    <TextView
+                android:id="@+id/com_cypay_paysdk_product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="@dimen/com_cypay_paysdk_max_width"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/com_cypay_paysdk_production_font_size" />
+            
+                  
+                 <TextView
+                android:id="@+id/com_cypay_paysdk_amount"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:maxWidth="@dimen/com_cypay_paysdk_max_width"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/land_com_cypay_paysdk_head_amount_font_size" />
+                
+                <TextView
+                android:id="@+id/com_cypay_paysdk_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="@dimen/com_cypay_paysdk_max_width"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/com_cypay_paysdk_production_font_size" />
+             
+                 
+             
+         </LinearLayout>
+            
+         
+       
+
+            <!-- 价格 -->
+            <LinearLayout
+                android:layout_above="@+id/bootom_notice"
+                android:background="#00619b"
+                android:id="@+id/home_linear"
+                android:layout_centerHorizontal="true"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+                
+                
+                <ImageView 
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/com_cypay_sdk_usercenter_usericon"
+                    />
+
+                <TextView
+                    android:id="@+id/com_cypay_paysdk_user_name"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:lineSpacingExtra="1.5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/land_com_cypay_paysdk_head_username_font_size" />
+
+                 <ImageView 
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/com_cypay_paysdk_right_arrow"
+                    />
+               
+                
+                
+            
+            </LinearLayout>
+            
+                   <LinearLayout 
+               android:layout_alignParentBottom="true"
+               android:gravity="center_vertical"
+               android:id="@+id/bootom_notice"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:src="@drawable/com_cypay_paysdk_secure_logo" />
+           </LinearLayout>
+             
+         </RelativeLayout>
+            
+         
+            
+            
+            
+        </LinearLayout>
+        
+          
+            <!-- 左右分割线 -->
+       
+        
+         <LinearLayout 
+             android:id="@+id/body"
+             android:layout_toRightOf="@+id/header"
+             android:layout_width="wrap_content"
+             android:layout_height="fill_parent"
+             android:orientation="vertical"
+             android:background="@drawable/com_cypay_psysdk_usercenter_bg"
+             >
+         <!-- head先隐藏了 -->
+                     <LinearLayout 
+                android:id="@+id/title"
+                android:layout_width="fill_parent"
+                android:background="@color/com_cypay_paysdk_title_bg"
+                android:gravity="center_vertical|left"
+                android:layout_height="wrap_content"
+                >
+                
+           
+         
+                <TextView 
+                    android:id="@+id/title_tv"
+                    android:textColor="#555555"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="@dimen/com_cypay_paysdk_all_title_text_font_size"
+                    android:text="@string/com_cypay_paysdk_string_user_center"
+                    />
+                
+            </LinearLayout>
+                <View 
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/com_cypay_paysdk_all_line_color"
+                    />
+                
+             <LinearLayout 
+                 android:id="@+id/credit_container"
+                 android:background="@color/com_cypay_paysdk_content_bg"
+                 android:layout_width="fill_parent"
+                 android:layout_height="fill_parent"
+                 android:orientation="vertical"
+                 > 
+              
+             </LinearLayout> 
+             
+         </LinearLayout>
+         
+         
+                  
+    
+</RelativeLayout>

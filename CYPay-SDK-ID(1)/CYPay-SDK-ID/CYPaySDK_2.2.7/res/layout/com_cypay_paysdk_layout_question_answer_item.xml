@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:minHeight="60dp"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+        
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="top"
+            >
+        <TextView 
+        android:text="Q: "
+        android:layout_marginLeft="10dp"
+        android:textColor="#FF0000"
+        android:textSize="@dimen/com_cypay_paysdk_question_answer_content_font_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        />
+            
+        <TextView 
+        android:id="@+id/question_tv"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="#FF0000"
+        android:textSize="@dimen/com_cypay_paysdk_question_answer_content_font_size"
+        android:layout_width="0dp"
+        android:layout_weight="1.0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        />
+        </LinearLayout>
+    
+ 
+    <View 
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#FAFAFA"
+        />
+    
+      <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="top"
+            >
+        <TextView 
+        android:id="@+id/ans"
+        android:layout_marginLeft="10dp"
+        android:text="A: "
+        android:textColor="@color/com_cypay_paysdk_usercenter_content_black"
+        android:textSize="@dimen/com_cypay_paysdk_question_answer_content_font_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        />
+          
+        <TextView 
+        android:id="@+id/answer_tv"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/com_cypay_paysdk_usercenter_content_black"
+        android:textSize="@dimen/com_cypay_paysdk_question_answer_content_font_size"
+        android:layout_marginRight="10dp"
+        android:layout_width="0dp"
+        android:layout_weight="1.0"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        />
+          
+      </LinearLayout>
+      
+    </LinearLayout>
+    
+    
+</LinearLayout>

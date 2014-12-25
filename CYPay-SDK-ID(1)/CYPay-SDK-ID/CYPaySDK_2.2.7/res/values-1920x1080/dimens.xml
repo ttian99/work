@@ -1,0 +1,26 @@
+<resources>
+    <dimen name="com_cypay_paysdk_makesure_dialog_cents_text_size">12sp</dimen><!-- 确认对话框内显示余额及左部标签字体大小 -->
+    <dimen name="com_cypay_paysdk_head_amount_font_size">36sp</dimen><!-- 头部金额字体大小 -->
+    <dimen name="com_cypay_paysdk_head_username_font_size">22sp</dimen><!-- 头部用户名字体大小 -->
+    <dimen name="com_cypay_paysdk_production_font_size">20sp</dimen>
+    <dimen name="com_cypay_paysdk_all_title_text_font_size">18sp</dimen><!-- 用户中心标题字体大小 -->
+    <dimen name="com_cypay_paysdk_usercenter_label_font_size">16sp</dimen><!-- 用户中心功能label大小 -->
+    <dimen name="com_cypay_paysdk_pick_date_edit_font_size">12sp</dimen><!-- 选日期文本输入框字体大小 -->
+    
+    
+    <dimen name="com_cypay_paysdk_transaction_detail_left_font_size">16sp</dimen><!-- 订单详情左边字体大小-->
+    <dimen name="com_cypay_paysdk_transaction_detail_right_font_size">14sp</dimen><!-- 订单详情右边字体大小-->
+    <dimen name="com_cypay_paysdk_transaction_item_line1_font_size">18sp</dimen><!-- 查询订单列表item第一行字体大小-->
+    <dimen name="com_cypay_paysdk_transaction_item_line2_font_size">12sp</dimen><!-- 查询订单列表item第二行字体大小-->
+    
+    <dimen name="com_cypay_paysdk_all_edit_font_size">16sp</dimen><!-- 文本输入框字体大小 -->
+    
+    <dimen name="com_cypay_paysdk_findpassword_forget_font_size">14sp</dimen><!-- 重置密码forget大小 -->
+    <dimen name="com_cypay_paysdk_question_edit_height">150dp</dimen><!-- 用户服务问题输入框高度 -->
+    
+    <dimen name="com_cypay_paysdk_question_answer_content_font_size">16sp</dimen><!-- FAQ问题内容字体大小 -->
+    
+    
+    <dimen name="land_com_cypay_paysdk_head_username_font_size">22sp</dimen><!-- 横版头部用户名字体大小 -->    
+    <dimen name="land_com_cypay_paysdk_head_amount_font_size">36sp</dimen><!-- 横屏头部金额字体大小 -->
+</resources>

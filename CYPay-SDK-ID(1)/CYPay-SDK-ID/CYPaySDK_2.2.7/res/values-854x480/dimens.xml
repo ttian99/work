@@ -1,0 +1,3 @@
+<resources>
+<dimen name="com_cypay_paysdk_pick_date_edit_font_size">11sp</dimen><!-- 选日期文本输入框字体大小 -->
+</resources>

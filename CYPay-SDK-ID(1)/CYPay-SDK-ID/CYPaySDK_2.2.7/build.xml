@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="MobPay" default="proguard-deve" basedir=".">
+	<property file="project.properties" />
+	
+	<!-- ANT环境变量 -->
+	<property environment="env" />
+	
+	<property name="app.name" value="MoboPaySdk_Android" />
+	
+	<property name="app.version" value="1.8.2" />
+	
+	
+	<!-- jdk-home -->
+	<property name="jdk-home" value="${env.JAVA_HOME}"/>
+	<property name="androidSDK-home" value="${env.android_sdk_home}"/>
+	
+	<property name="keystore.file" value="${basedir}/unionpay.keystore" />
+	
+	<!-- SDK目录(获取操作系统环境变量ANDROID_SDK_HOME的值) -->
+	<property name="sdk-folder" value="${androidSDK-home}" /> <!--/usr/local/android-sdk-linux or F:\android-sdk-windows-->
+	
+	<!-- SDK指定平台目录 -->
+	<property name="sdk-platform-folder" value="${sdk-folder}/platforms/android-19" />
+	
+	<property name="sdk-tools" value="${sdk-folder}/tools" />
+	
+	<!-- SDK指定平台中tools目录 -->
+	<property name="sdk-platform-tools" value="${sdk-folder}/platform-tools" />
+	
+	<!-- 测试版路径 -->
+	<property name="test-ospath" value="${basedir}/fortest/ConstForBuild.java"/>
+	
+	<!-- 开发版路径 -->
+	<property name="deve-ospath" value="${basedir}/fordeve/ConstForBuild.java"/>
+	
+	<!-- 生产版路径 -->
+	<property name="prod-ospath" value="${basedir}/forprod/ConstForBuild.java"/>
+	
+	<!-- 库项目  -->   
+	<property name="library-dir" location="../CYPaySDK_2.0_trunk" />
+	
+	<property name="proguard-home" value="${sdk-folder}/tools/proguard/lib" />
+	
+	<!--  定义自己的输出目录  -->
+	<property name="outdir" value="${basedir}/.build" />   
+	<property name="out.absolute.dir" location="${outdir}" />
+	
+	<!--  定义 R.java 所有目录  -->
+	<property name="out-dir-gen" value="gen" />
+	
+	<!--  读取目录  -->
+	<property name="resource-dir" value="res" />   
+	<property name="asset-dir" value="assets" />   
+	<property name="src-dir" value="src" />
+	<property name="libraryjars.dir" value="libs"/>
+	<property name="src-dir-ospath" location="${src-dir}" />   
+	<property name="lib.absolute.dir" location="${libraryjars.dir}" />   
+	<property name="native.libs.absolute.dir" location="${libraryjars.dir}" />
+	
+	<!--  输出目录  -->   
+	<property name="outdir-classes" value="${outdir}" />
+	<property name="outdir-bin" location="${outdir}" />
+	
+	<property
+		        name="resources-package"
+		        value="${outdir-bin}/resources.ap_" />
+
+		    <property
+		        name="resources-package-ospath"
+		        value="${resources-package}" />
+	
+	<property name="out.classes.absolute.dir" location="${outdir-classes}" />
+	
+	<!-- 开发版dex文件件路径-->
+		<property  name="dev-dex" value="${outdir-classes}/develop/classes.dex" />
+		<!-- 测试版dex文件件路径-->
+		<property  name="test-dex" value="${outdir-classes}/test/classes.dex" />
+		<!-- 生产版dex文件件路径-->
+		<property  name="pro-dex" value="${outdir-classes}/prod/classes.dex" />
+		
+			<!-- 未认证开发apk包 -->
+		    <property  name="out-unsigned-package-develop-ospath" value="${outdir-classes}/develop/${app.name}-unsigned-develop.apk" />
+			<!-- 未认证测试apk包 -->
+			 <property name="out-unsigned-package-test-ospath" value="${outdir-classes}/test/${app.name}-unsigned-test.apk" />
+
+			<!-- 未认证生产apk包 -->
+		<property name="out-unsigned-package-produce-ospath" value="${outdir-classes}/prod/${app.name}-unsigned-produce.apk" />
+		
+		<!-- 开发版已签名apk-->
+		    <property
+		        name="out-signed-package-develop-ospath"
+		        value="${outdir-classes}/${app.name}_fordeve.apk" />
+			<!-- 测试版已签名apk-->
+			 <property
+			        name="out-signed-package-test-ospath"
+			        value="${outdir-classes}/${app.name}_fortest.apk" />
+			<!-- 生产版已签名apk-->
+			 <property
+			        name="out-signed-package-produce-ospath"
+			        value="${outdir-classes}/${app.name}_forprod.apk" />
+	
+	<!--  临时类资源文件  -->   
+	<property name="dex-file" value="classes.dex" />   
+	<property name="intermediate-dex" value="${out.absolute.dir}/${dex-file}" />
+	
+	<!--  最终生成文件   -->   
+	  <property name="out-package" value="${outdir}/${app.name}.apk" />   
+	 <!--  要使用的工具   -->   
+	  <property name="aapt" value="${sdk-folder}/build-tools/19.0.0/aapt" />   
+	  <property name="aidl" value="${sdk-platform-tools}/aidl" />   
+	  <property name="dx" value="${sdk-platform-tools}/dx" />   
+	  <property name="adb" value="${sdk-platform-tools}/adb" />   
+	  <property name="apk-builder" value="${sdk-tools}/apkbuilder" />   
+	  <property name="android-jar" value="${sdk-platform-folder}/android.jar" />   
+	 <!-- 最终生成各种包文件   -->
+	  <property name="resources-package" value="${outdir}/${app.name}" />   
+	  <property name="resources-package-ospath" value="${basedir}/${resources-package}" />   
+	  <property name="out-unsigned-package" value="${outdir}/${app.name}-unsigned.apk" />   
+	  <property name="out-unsigned-package-ospath" value="${out-unsigned-package}" />   
+	  <property name="out-signed-package" value="${outdir}/${app.name}-signed.apk" />   
+	  <property name="out-signed-package-ospath" value="${out-signed-package}" />   
+	  <property name="zipalign-package-develop-osname" value="${outdir}/${app.name}_v${app.version}_fordeve.apk" />
+		<property name="zipalign-package-test-osname" value="${outdir}/${app.name}_v${app.version}_fortest.apk" /> 
+		<property name="zipalign-package-prod-osname" value="${outdir}/${app.name}_v${app.version}_forprod.apk" /> 
+	
+	  <property name="zipalign-package-develop-ospath" value="${zipalign-package-develop-osname}" /> 
+	<property name="zipalign-package-test-ospath" value="${zipalign-package-test-osname}" />
+	<property name="zipalign-package-prod-ospath" value="${zipalign-package-prod-osname}" />
+	
+	<!-- 签名工具  -->   
+	  <property name="jarsigner" value="${jdk-home}/bin/jarsigner" />
+	<!-- 优化APK工具 -->   
+	  <property name="zipalign" value="${sdk-tools}/zipalign" />
+	<!--  初始化   -->   
+	<target name="init">  
+	  <echo>Creating all output directories</echo>   
+	  <delete dir="${outdir}" />
+	  <delete dir="${out-dir-gen}" />
+	  <mkdir dir="${outdir}" />
+	  <mkdir dir="${out-dir-gen}" />
+	  </target>  
+	
+	<!-- 步骤 1： aapt生成R.java -->   
+	 <target name="gen-R" depends="init">  
+	  <echo>Generating R.java...</echo>   
+	 <exec executable="${aapt}" failonerror="true">  
+	  <arg value="package" />   
+	  <arg value="-m" />   
+	  <arg value="-J" />   
+	  <arg value="${out-dir-gen}" />
+	  <arg value="-M" />   
+	  <arg value="AndroidManifest.xml" />
+	  <arg value="-S" />   
+	  <arg value="${resource-dir}" />   
+	 	<!-- Library Project的包名 -->   
+	  <arg value="-A" />   
+	  <arg value="${asset-dir}" />   
+	  <arg value="-I" />   
+	  <arg value="${android-jar}" />   
+	  <arg value="--auto-add-overlay" />   
+	  </exec>  
+	  </target>
+	
+	<!--  步骤 2. 编译所有class文件.  -->   
+	 <target name="compile" depends="init, gen-R">
+	 	<echo>Compiling java source code...</echo>
+	 	<mkdir dir="${outdir-classes}/develop/cupcc_develop_classes"/>
+	 	<mkdir dir="${outdir-classes}/develop/cupcc_develop_gen"/>
+	 	
+	 	
+	 	<!-- 编译开发版本 -->
+	 	
+		 <javac encoding="UTF-8" target="1.6" debug="true" extdirs="" srcdir="${basedir}/src" destdir="${outdir-classes}/develop/cupcc_develop_classes" bootclasspath="${android-jar}">
+		 	<!--<src path="${library-dir}/src" />--><!-- 工程源码-->
+		 	
+		 	<classpath>
+		 	<fileset dir="${library-dir}/gen" /><!-- 工程源码-->
+		 	<fileset dir="${basedir}/libs" includes="*.jar"/>
+		    <fileset dir="${sdk-folder}/tools/support" includes="annotations.jar"/>
+		 </classpath>  
+		 </javac>  
+	 	<jar basedir="${outdir-classes}/develop/cupcc_develop_classes" destfile="${outdir}/notproguard_sdk.jar" />
+	  </target>
+	
+	<!--  对开发版本混淆代码   -->   
+		 <target name="proguard-deve" depends="compile">  
+		  <jar basedir="${outdir-classes}/develop/cupcc_develop_classes" destfile="temp.jar" />   
+		 <java jar="${proguard-home}/proguard.jar" fork="true" failonerror="true">  
+		  <jvmarg value="-Dmaximum.inlined.code.length=32" />   
+		  <arg value="-injars temp.jar" />   
+		  <arg value="-outjars optimized.jar" />   
+		  <arg value="-libraryjars ${android-jar}" />   
+		  <arg value="-libraryjars ${native.libs.absolute.dir}" />
+		  <arg value="-dontpreverify" />   
+		  <arg value="-dontoptimize" />   
+		  <arg value="-dontwarn" />   
+		  <arg value="-dontusemixedcaseclassnames" />  
+		  <arg value="-repackageclasses 'com.cypay.sdk'" />   
+		  <arg value="-allowaccessmodification" />   
+		  <arg value="@${basedir}/proguard.config" />
+		  <arg value="-optimizationpasses 5" />   
+		  <arg value="-verbose" />   
+		  <arg value="-dontskipnonpubliclibraryclasses" />   
+		  <arg value="-dontskipnonpubliclibraryclassmembers" />   
+		  </java>  
+		  <delete file="temp.jar" />
+		  <delete dir="${outdir-classes}/develop/cupcc_develop_classes" />
+		  <mkdir dir="${outdir-classes}/develop/cupcc_develop_classes" />
+		  <unzip src="optimized.jar" dest="${outdir-classes}/develop/cupcc_develop_classes" />   
+		  <delete file="optimized.jar" />
+		  <delete dir="${outdir-classes}/develop/cupcc_develop_classes/com/facebook" />
+		  <jar basedir="${outdir-classes}/develop/cupcc_develop_classes" destfile="${outdir}/cypaysdk.jar" />
+		  </target>  
+	
+	
+	<!--  对测试版本混淆代码   -->   
+		 <target name="proguard-test" depends="proguard-deve">  
+		  <jar basedir="${outdir-classes}/test/cupcc_test_classes" destfile="temp.jar" />   
+		 <java jar="${proguard-home}/proguard.jar" fork="true" failonerror="true">  
+		  <jvmarg value="-Dmaximum.inlined.code.length=32" />   
+		  <arg value="-injars temp.jar" />   
+		  <arg value="-outjars optimized.jar" />   
+		  <arg value="-libraryjars ${android-jar}" />   
+		  <arg value="-libraryjars ${native.libs.absolute.dir}" />
+		  <arg value="-dontpreverify" />   
+		  <arg value="-dontoptimize" />   
+		  <arg value="-dontwarn" />   
+		  <arg value="-dontusemixedcaseclassnames" />  
+		  <arg value="-repackageclasses ''" />   
+		  <arg value="-allowaccessmodification" />   
+		  <arg value="@${proguard.config}" />
+		  <arg value="-optimizationpasses 5" />   
+		  <arg value="-verbose" />   
+		  <arg value="-dontskipnonpubliclibraryclasses" />   
+		  <arg value="-dontskipnonpubliclibraryclassmembers" />   
+		  </java>  
+		  <delete file="temp.jar" />
+		  <delete dir="${outdir-classes}/test/cupcc_test_classes" />
+		  <mkdir dir="${outdir-classes}/test/cupcc_test_classes" />
+		  <unzip src="optimized.jar" dest="${outdir-classes}/test/cupcc_test_classes" />   
+		  <delete file="optimized.jar" />
+		  </target>  
+	
+	
+	<!--  对生产版本混淆代码   -->   
+	 <target name="proguard-prod" depends="proguard-test">  
+	  <jar basedir="${outdir-classes}/prod/cupcc_prod_classes" destfile="temp.jar" />   
+	 <java jar="${proguard-home}/proguard.jar" fork="true" failonerror="true">  
+	  <jvmarg value="-Dmaximum.inlined.code.length=32" />   
+	  <arg value="-injars temp.jar" />   
+	  <arg value="-outjars optimized.jar" />   
+	  <arg value="-libraryjars ${android-jar}" />   
+	  <arg value="-libraryjars ${native.libs.absolute.dir}" />
+	  <arg value="-dontpreverify" />   
+	  <arg value="-dontoptimize" />   
+	  <arg value="-dontwarn" />   
+	  <arg value="-dontusemixedcaseclassnames" />  
+	  <arg value="-repackageclasses ''" />   
+	  <arg value="-allowaccessmodification" />   
+	  <arg value="@${proguard.config}" />
+	  <arg value="-optimizationpasses 5" />   
+	  <arg value="-verbose" />   
+	  <arg value="-dontskipnonpubliclibraryclasses" />   
+	  <arg value="-dontskipnonpubliclibraryclassmembers" />   
+	  </java>  
+	  <delete file="temp.jar" />
+	  <delete dir="${outdir-classes}/prod/cupcc_prod_classes" />
+	  <mkdir dir="${outdir-classes}/prod/cupcc_prod_classes" />
+	  <unzip src="optimized.jar" dest="${outdir-classes}/prod/cupcc_prod_classes" />   
+	  <delete file="optimized.jar" />
+	  </target>  
+	 
+	<!--  步骤 3. 转换class文件为dex文件.-->   
+	 <target name="deve-dex" depends="proguard-prod">
+	  <echo>Converting compiled files into ${intermediate-dex}...</echo>   
+	 <exec executable="${dx}" failonerror="true">  
+	  <arg value="--dex" />   
+	  <arg value="--output=${dev-dex}" />  
+	 <!-- 要生成.dex文件的源classes和libraries -->
+	  <arg value="${outdir-classes}/develop/cupcc_develop_classes" />   
+	  <arg value="${lib.absolute.dir}" />   
+	  </exec>  
+	  </target>
+	
+	<target name="test-dex" depends="deve-dex">  
+	<echo>Converting compiled files and external libraries into a .dex file...</echo>
+	<exec executable="${dx}" failonerror="true">  
+	<arg value="--dex" />  
+	<!-- 输出文件 -->  
+	<arg value="--output=${test-dex}" />  
+	<!-- 要生成.dex文件的源classes和libraries -->  
+	<arg value="${outdir-classes}/test/cupcc_test_classes" /> 
+	<arg value="${lib.absolute.dir}"/>
+	</exec>  
+	</target>
+	
+	<target name="prod-dex" depends="test-dex">  
+		<echo>Converting compiled files and external libraries into a .dex file...</echo>
+		<exec executable="${dx}" failonerror="true">  
+		<arg value="--dex" />  
+		<!-- 输出文件 -->  
+		<arg value="--output=${pro-dex}" />  
+		<!-- 要生成.dex文件的源classes和libraries -->  
+		<arg value="${outdir-classes}/prod/cupcc_prod_classes" /> 
+		<arg value="${lib.absolute.dir}"/>
+		</exec>  
+		</target>
+	
+	<!--  步骤 4. 将资源和清单打包. -->   
+	 <target name="package-res-and-assets" depends="prod-dex">  
+	  <echo>Packaging resources and assets...</echo>   
+	 <exec executable="${aapt}" failonerror="true">  
+	  <arg value="package" />   
+	  <arg value="-f" />   
+	  <arg value="-M" />   
+	  <arg value="AndroidManifest.xml" />   
+	  <arg value="-S" />   
+	  <arg value="${resource-dir}" />   
+	  <arg value="-S" />   
+	  <arg value="${library-dir}/res" />   
+	  <arg value="-A" />   
+	  <arg value="${asset-dir}" />   
+	  <arg value="-I" />   
+	  <arg value="${android-jar}" />   
+	  <arg value="-F" />   
+	  <arg value="${resources-package}" />   
+	  <arg value="--auto-add-overlay" />   
+	  </exec>  
+	  </target>
+	
+	<!--  步骤 5. 将打好的包编译为APK文件. -->   
+	 <target name="package-develop" depends="prod-dex, package-res-and-assets">  
+	  <echo>release:Packaging ${out-debug-package-ospath}, and signing it with a debug key...</echo>   
+	 <exec executable="${apk-builder}" failonerror="true">  
+	  <arg value="${out-unsigned-package-develop-ospath}" />   
+	  <arg value="-u" />   
+	  <arg value="-z" />   
+	  <arg value="${resources-package-ospath}" />   
+	  <arg value="-f" />   
+	  <arg value="${dev-dex}" />   
+	  <arg value="-rf" />   
+	  <arg value="${outdir-classes}/develop/cupcc_develop_src" />
+	 	<!-- 打包.so库文件 -->   
+		  <arg value="-nf" />   
+		  <arg value="${library-dir}/libs" />
+	  </exec>  
+	  </target>
+	
+	<target name="package-test" depends="package-develop">  
+		  <echo>release:Packaging ${out-debug-package-ospath}, and signing it with a debug key...</echo>   
+		 <exec executable="${apk-builder}" failonerror="true">  
+		  <arg value="${out-unsigned-package-test-ospath}" />   
+		  <arg value="-u" />   
+		  <arg value="-z" />   
+		  <arg value="${resources-package-ospath}" />   
+		  <arg value="-f" />   
+		  <arg value="${test-dex}" />   
+		  <arg value="-rf" />   
+		  <arg value="${outdir-classes}/test/cupcc_test_src" />
+		 <!-- 打包.so库文件 -->   
+		  <arg value="-nf" />   
+		  <arg value="${library-dir}/libs" />
+		  </exec>  
+		  </target>
+	
+	<target name="package-prod" depends="package-test">  
+			  <echo>release:Packaging ${out-debug-package-ospath}, and signing it with a debug key...</echo>   
+			 <exec executable="${apk-builder}" failonerror="true">  
+			  <arg value="${out-unsigned-package-produce-ospath}" />   
+			  <arg value="-u" />   
+			  <arg value="-z" />   
+			  <arg value="${resources-package-ospath}" />   
+			  <arg value="-f" />   
+			  <arg value="${pro-dex}" />   
+			  <arg value="-rf" />   
+			  <arg value="${outdir-classes}/prod/cupcc_prod_src" />
+			 <!-- 打包.so库文件 -->   
+			  <arg value="-nf" />   
+			  <arg value="${library-dir}/libs" />
+			  </exec>  
+			  </target>
+	<!-- 步骤 6. 签名APK文件  -->   
+	 <target name="jarsigner-deve" depends="package-prod">
+	 <echo>jarsigner ${out-unsigned-package-ospath} to ${out-signed-package-ospath}</echo>   
+	 <exec executable="${jarsigner}" failonerror="true">  
+	  <arg value="-verbose" />   
+	  <arg value="-storepass" />   
+	  <arg value="mobilepayment" /> 
+	  <arg value="-keypass" />
+	  <arg value="mobilepayment" />
+	  <arg value="-keystore" />   
+	  <arg value="${keystore.file}" />
+	  <arg value="-signedjar" />   
+	  <arg value="${out-signed-package-develop-ospath}" />   
+	  <arg value="${out-unsigned-package-develop-ospath}" />   
+	  <arg value="unionpay" />   
+	  </exec>  
+	  </target>
+	
+	<target name="jarsigner-test" depends="jarsigner-deve">
+		 <echo>jarsigner ${out-unsigned-package-ospath} to ${out-signed-package-ospath}</echo>   
+		 <exec executable="${jarsigner}" failonerror="true">  
+		  <arg value="-verbose" />   
+		  <arg value="-storepass" />   
+		  <arg value="mobilepayment" /> 
+		  <arg value="-keypass" />
+		  <arg value="mobilepayment" />
+		  <arg value="-keystore" />   
+		  <arg value="${keystore.file}" />
+		  <arg value="-signedjar" />   
+		  <arg value="${out-signed-package-test-ospath}" />   
+		  <arg value="${out-unsigned-package-test-ospath}" />   
+		  <arg value="unionpay" />   
+		  </exec>  
+		  </target>
+	
+	<target name="jarsigner-prod" depends="jarsigner-test">
+		 <echo>jarsigner ${out-unsigned-package-ospath} to ${out-signed-package-ospath}</echo>   
+		 <exec executable="${jarsigner}" failonerror="true">  
+		  <arg value="-verbose" />   
+		  <arg value="-storepass" />   
+		  <arg value="mobilepayment" /> 
+		  <arg value="-keypass" />
+		  <arg value="mobilepayment" />
+		  <arg value="-keystore" />   
+		  <arg value="${keystore.file}" />
+		  <arg value="-signedjar" />   
+		  <arg value="${out-signed-package-produce-ospath}" />   
+		  <arg value="${out-unsigned-package-produce-ospath}" />
+		  <arg value="unionpay" />   
+		  </exec>  
+		  </target>
+		<!-- zipalign优化android程序 -->   
+	 <target name="release" depends="jarsigner-prod">
+	 		<!-- 删除未签证apk -->
+	 	 <delete dir="${outdir-classes}/develop" />
+	 	<delete dir="${outdir-classes}/test" />
+	 	<delete dir="${outdir-classes}/prod" />
+	 	
+	 	<echo>zipalign ${zipalign-package-ospath}</echo>   
+		  <exec executable="${zipalign}" failonerror="true">
+		  <arg value="-v" />   
+		  <arg value="-f" />   
+		  <arg value="4" />   
+		  <arg value="${out-signed-package-develop-ospath}" />
+		  <arg value="${zipalign-package-develop-ospath}" />
+	  </exec>
+	 	
+	 	<delete file="${out-signed-package-develop-ospath}" />
+	 	
+	 	<exec executable="${zipalign}" failonerror="true">
+	 		  <arg value="-v" />   
+	 		  <arg value="-f" />   
+	 		  <arg value="4" />   
+	 		  <arg value="${out-signed-package-test-ospath}" />
+	 		  <arg value="${zipalign-package-test-ospath}" />
+	 		  </exec>
+	 	
+	 	<delete file="${out-signed-package-test-ospath}" />
+	 	
+	 	<exec executable="${zipalign}" failonerror="true">
+	 		  <arg value="-v" />   
+	 		  <arg value="-f" />   
+	 		  <arg value="4" />   
+	 		  <arg value="${out-signed-package-produce-ospath}" />
+	 		  <arg value="${zipalign-package-prod-ospath}" />
+	 		  </exec>
+	 	<delete file="${out-signed-package-produce-ospath}" />
+	 	<delete file="${resources-package}" />
+	 	 <echo>APK is released. path:${outdir-classes} </echo>
+	  </target>  
+	
+	</project>

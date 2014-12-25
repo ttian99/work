@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<resources>
+
+    <string name="com_cypay_paysdk_loading">Loading...</string>
+    <string name="com_mobogenie_paysdk_no_connection">Check Your Network Connection</string>
+    <string name="com_mobogenie_paysdk_network_err">Network Error</string>
+    <string name="com_mobogenie_paysdk_signing">Login</string>
+    <string name="com_mobogenie_paysdk_pay_err">Sorry, You Cannot Pay Now. Please Try Later.</string>
+    <string name="com_mobogenie_paysdk_login_failed">Failed</string>
+    <string name="com_mobogenie_paysdk_loading">Loading...</string>
+    <string name="com_mobogenie_paysdk_in_progress">Processing</string>
+    <string name="com_mobogenie_paysdk_mimo_tip">Use %1$s to pay %2$d %3$s?</string>
+    <string name="com_mobogenie_paysdk_mimo_tip_phone">Use the specified %2$s number to pay Rp %1$s?</string>
+    <string name="com_mobogenie_paysdk_mimo_tip_phone_tax">Use the specified %3$s amount to pay Rp %1$s? Tax is 10%%, total amount is Rp %2$s.</string>
+    <string name="com_mobogenie_paysdk_mimo_tip_phone_info">Type:</string>
+    <string name="com_mobogenie_paysdk_mimo_error_amount">Error: Incorrect Amount</string>
+    <string name="com_mobogenie_paysdk_type_of_card">Card Type:</string>
+    <string name="com_mobogenie_paysdk_mimo_atm">Please use Kode Perusahaan and pay by ATM</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint">Please send SMS [%1$s] to %2$s for payment.</string>
+    <string name="com_mobogenie_paysdk_mimo_xl">Sent to your mobile phone already, ordered is %1$s. Please reply as recommended in SMS.</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint_tips">Please input the [up %1$s] below to pay using your own number.</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint_tips_info">If success, the payment will deduct your balance automatically</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint_tips_2">The Verification Code is [%1$s]. Copy [%2$s] and send SMS to %3$s. </string>
+    <string name="com_mobogenie_paysdk_mimo_voucher_tips">Please enter correct secret key. Attention: please make sure the amount of pin is same as item price.</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint_tips_error">Please enter the correct verification code.</string>
+    <string name="com_mobogenie_paysdk_channels_itemname">YOU CAN GET %1$s</string>
+    <string name="com_mobogenie_paysdk_channels_error_nochannels">Sorry, this item cannot be supported by any payment method.</string>
+    <string name="com_mobogenie_paysdk_pay_error">Transaction Unsuccessful.</string>
+    <string name="com_mobogenie_paysdk_pay_success">You have made a successful payment.</string>
+    <string name="com_mobogenie_paysdk_pay_securepayment">SECURE PAYMENT</string>
+    <string name="com_mobogenie_paysdk_channels_mycard_input_pin">Enter MyCard code</string>
+    <string name="com_mobogenie_paysdk_channels_mycard_input_password">Enter password</string>
+    <string name="com_mobogenie_paysdk_channels_mycard_input_null">code or password is null</string>
+    <string name="com_cypay_paysdk_channels_mol_pin_no">Card PIN Number</string>
+    <string name="com_cypay_paysdk_channels_mol_serial_no">Card Serial Number</string>
+    <string name="com_cypay_paysdk_channels_mol_verify">Verify</string>
+    <string name="com_cypay_paysdk_channels_mol_serial_empty">Please Input Serial No .</string>
+    <string name="com_cypay_paysdk_channels_mol_pin_empty">Please Input Pin No .</string>
+    <string name="com_cypay_input_payment">PAYMENT:</string>
+    <string name="com_cypay_input_tips_type1">You’ve selected %1$s payment, insert your phone number below:</string>
+    <string name="com_cypay_input_tips_type2">You’ve selected %1$s payment, insert your pin below:</string>
+    <string name="com_cypay_input_et_hint1_cardnumber">Card Serial Number</string>
+    <string name="com_cypay_input_et_hint2_pw">PIN ..</string>
+    <string name="com_cypay_input_et_hint3_phone">Phone Number ..</string>
+    <string name="com_cypay_input_btn_pay">Pay</string>
+    <string name="com_cypay_input_btn_cancel">Cancel</string>
+    <string name="com_cypay_paysdk_channels_indomog_secret_code">Scratch Code</string>
+    <string name="com_cypay_paysdk_channels_indomog_serial_empty">Please Input Scratch Code .</string>
+    <string name="com_mobogenie_paysdk_channels_item_balance">BALANCE </string>
+    <string name="com_cypay_paysdk_payment_finished">Finished</string>
+    <string name="com_cypay_paysdk_payemnt_cancel">Cancelled</string>
+    <string name="com_mobogenie_paysdk_mimo_upoint_tips_info_2">Please confirm recharge is successful, then press the button to confirm payment.</string>
+    <string name="com_cypay_paysdk_ngnotice">Please input Card serial number and Card pin number</string>
+    <string name="com_cypay_paysdk_unconfumed_tip">Purchase Error. Amount added to your Wall-ET Balance.</string>
+    <string name="com_cypay_paysdk_part_payment_error">Amount you spent is not enough, the balance will be transferred to your Wall-ET. Use your Wall-ET to pay.</string>
+    <string name="com_cypay_paysdk_balance_tip">Surplus amount is transferred to your Wall-ET balance</string>
+    <string name="com_cypay_paysdk_mimopay_error_code_tip">Pin code is used or unavailable</string>
+    <string name="com_cypay_paysdk_mimopay_error_phone_no">Phone number entered is unavailable</string>
+
+    <item name="bank" type="id"/>
+
+   
+    <string name="com_cypay_paysdk_login_tip">Existing User Login </string>
+    <string name="com_cypay_paysdk_user_name">User Name</string>
+    <string name="com_cypay_paysdk_new_pwd">Password</string>
+    <string name="com_cypay_paysdk_retype_pwd">Retype Password</string>
+    <string name="com_cypay_paysdk_create_user">Register</string>
+    <string name="com_cypay_paysdk_cc_month">Month</string>
+    <string name="com_cypay_paysdk_cc_year">Year</string>
+    <string name="com_cypay_paysdk_cc_cvv">CVV</string>
+    <string name="com_cypay_paysdk_cc_number">Credit Card Number</string>
+    <string name="com_cypay_paysdk_cc_payment_tip">Pay via Credit Card</string>
+    <string name="com_cypay_paysdk_cc_pwd_tip">Step 1: Please complete card no. for verification：</string>
+    <string name="com_cypay_paysdk_cc_new_pwd">New Password</string>
+    <string name="com_cypay_paysdk_cc_retype_pwd">Retype New Password</string>
+    <string name="com_cypay_paysdk_cc_userid">ID:</string>
+    <string name="com_cypay_paysdk_cc_need_pwd">Remember Password? </string>
+    <string name="com_cypay_paysdk_cc_never">Yes</string>
+    <string name="com_cypay_paysdk_cc_thirty_min">Yes, for 30mins</string>
+    <string name="com_cypay_paysdk_cc_everytime">Never</string>
+    <string name="com_cypay_paysdk_cc_agree"><u>Terms and Conditions</u></string>
+    <string name="com_cypay_paysdk_find_cvv">Card CVV is right here</string>
+    <string name="com_cypay_paysdk_verify_cc_error">Verification failed， please check card info</string>
+    <string name="com_cypay_paysdk_request_bounds_card_err">Failed, check connection &amp; try again</string>
+    <string name="com_cypay_paysdk_payment_err">Payment Failed，Check Connection</string>
+    <string name="com_cypay_paysdk_login_bind_err">Login Fail，Check Connection</string>
+    <string name="com_cypay_paysdk_subimt">Submit</string>
+    <string name="com_cypay_paysdk_goto_pay">Pay</string>
+    <string name="com_cypay_paysdk_retry">Retry</string>
+    <string name="com_cypay_paysdk_payment_success">Payment Success</string>
+    <string name="com_cypay_paysdk_retreive_pwd">Password Reset</string>
+    <string name="com_cypay_paysdk_bind_card_fail">Failed, Please Check Connection</string>
+    <string name="com_cypay_paysdk_pwd_retype_rule">This will be your new payment password</string>
+    <string name="com_cypay_paysdk_pwd_different">Password not match, please try again</string>
+    <string name="com_cypay_paysdk_card_input">Complete Card Info</string>
+    <string name="com_cypay_paysdk_bind_card_success">Done, Congratulations!</string>
+    <string name="com_cypay_paysdk_give_up">Don\'t link your bank card?</string>
+    <string name="com_cypay_paysdk_give_up_register">Don\'t Register?</string>
+    <string name="com_cypay_paysdk_unbind_card_tip">Unlink card ending with %1$s ?</string>
+    <string name="com_cypay_paysdk_enter_pwd_tip">Please enter your password:</string>
+    <string name="com_cypay_paysdk_empty_bind_card">Add a new card to continue payment</string>
+    <string name="com_cypay_paysdk_yes">Yes</string>
+    <string name="com_cypay_paysdk_no">No</string>
+    <string name="com_cypay_paysdk_add_credit_card">+ Pay with another Card</string>
+    <string name="com_cypay_paysdk_received_someting">You have received %1$s</string>
+    <string name="com_cypay_paysdk_sign_s_bind_fail">Sign up success,But bind card failed.Reason:</string>
+    
+    <!-- CHANGED STRINGS -->
+	<string name="com_cypay_paysdk_change_pwd_success">thành công</string>
+	<string name="com_cypay_paysdk_topup_my_wallet">nạp tiền xu</string>
+	<string name="com_mobogenie_paysdk_channels_item_my_wallet">TRẢ VỚI CENT</string>
+    <string name="com_cypay_paysdk_genies">CENTS</string>
+    <string name="com_cypay_paysdk_genies_need">(%1$s CENTS)</string>
+	<string name="com_cypay_paysdk_bind_cc">Đăng ký và nhận %1$s CENTS miễn phí! Để sử dụng trong mua hàng tiếp theo của bạn.</string>
+    <string name="com_cypay_paysdk_pwd_rule">Nhập 6-20 ký tự</string>	
+    <string name="com_cypay_paysdk_cc_pwd_tip_two">Bước 2: Nhập 6-20 ký tự mật khẩu mới:</string>
+    <string name="com_cypay_paysdk_balance_not_enough">Cents đủ.</string>
+    <string name="com_cypay_paysdk_username_rule">Nhập 3-15 ký tự</string>
+	<!-- NEW STRINGS -->
+	<string name="com_cypay_paysdk_need_genies">Cents yêu cầu:</string>
+	<string name="com_cypay_paysdk_available_balance">Cents hiện tại:</string>
+	<string name="com_cypay_paysdk_recharge_unsuccessful">Sạc không thành công.</string>
+	<string name="com_cypay_paysdk_recharge_successful">Nạp tiền thành công.</string>
+	<string name="com_cypay_paysdk_recharge_processing">Xử lý, vui lòng đợi …</string>
+	
+	
+
+	
+	<string name="com_cypay_paysdk_string_wrong_password">sai mật khẩu</string>
+	<string name="com_cypay_paysdk_string_password_not_match">6-20 chữ số chứa số hoặc chữ</string>
+	<string name="com_cypay_paysdk_string_username_not_match">3-15 chữ số chứa số hoặc chữ</string>
+	<string name="com_cypay_paysdk_string_twopassword_not_match">Mật khẩu không phù hợp</string>
+	<string name="com_cypay_paysdk_string_email_not_match">Gửi email không phù hợp</string>
+	
+	
+	
+	<!-- FortumoAPI -->
+	<string name="com_cypay_paysdk_string_fortumo_api_loading">Xin vui lòng chờ trong giây lát. Chúng tôi đang xử lý yêu cầu của bạn.</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_success">Thanh toán thành công</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_failed">Không thanh toán Vui lòng kiểm tra số dư</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_wait">Xin lỗi, thanh toán mất nhiều thời gian hơn expented. Vui lòng kiểm tra kết quả sau đó.</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_btn_confirm">Xác nhận</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_btn_cancel">Hủy bỏ</string>
+	<string name="com_cypay_paysdk_string_fortumo_api_tv_info">Thông tin</string>
+	
+	
+	
+	
+	
+	<!-- UserCenter -->
+	
+	<string name="com_cypay_paysdk_string_uercenteractivity_balance_tv">cân bằng</string>
+	<string name="com_cypay_paysdk_string_uercenteractivity_cent_tv">Cents</string>
+	<string name="com_cypay_paysdk_string_uercenterfragment_api_tv_info">Thông tin</string>
+	
+	<string name="com_cypay_paysdk_string_usercenterfragment_user_center">Trung tâm người sử dụng</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_transaction_details">Các chi tiết vềgiao dịch</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_customer_service">Dịch vụ khách hàng</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_transaction_detail">Lịch sử giao dịch</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_charge_detail">nạp Lịch sử</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_manage_account">Quản lý tài</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_security_center">Security\nCenter\n</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_user_service">Dịch vụ khách hàng</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_question_answer">\nFAQ\n</string>
+    
+    <string name="com_cypay_paysdk_string_transactionserachfragment_title_recharge">nạp Lịch sử</string>
+    <string name="com_cypay_paysdk_string_transactionserachfragment_title_transaction">Lịch sử giao dịch</string>
+    <string name="com_cypay_paysdk_string_transactionserachfragment_search_btn">Tìm kiếm</string>
+    <string name="com_cypay_paysdk_string_transactionserachfragment_item_label">Item Name</string>
+    <string name="com_cypay_paysdk_string_transactionserachfragment_payment_date">Payment Date</string>
+    <string name="com_cypay_paysdk_string_transactionserachfragment_choose_correct_time">Hãy chọn đúng ngày</string>
+    
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_orderid_label">Đặt hàng</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_appname_label">AppName</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_productname_label">ProductName</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_amount_label">Số tiền</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_channel_label">kênh</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_state_label">Nhà nước</string>
+    <string name="com_cypay_paysdk_string_transactiondetailfragment_time_label">Thời gian</string>
+    
+    <string name="com_cypay_paysdk_string_manageaccountfragment_title">Quản lý tài khoản</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_username_hint">Tên truy cập</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_password_hint">Mật khẩu</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_login_btn">đăng nhập</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_regist_linear">Đăng ký tài khoản mới</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_retype_password_hint">Nhập lại mật khẩu</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_email_hint">Email</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_regist_notice">Không bắt buộc, được sử dụng để khôi phục mật khẩu.</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_regist_btn">Đăng ký</string>
+    <string name="com_cypay_paysdk_string_manageaccountfragment_security_btn">Trung tâm Bảo mật</string>
+    
+    
+    
+    <string name="com_cypay_paysdk_string_securityfragment_change_password">thay đổi mật khẩu</string>
+	<string name="com_cypay_paysdk_string_securityfragment_bind_email">bind Email</string>
+	<string name="com_cypay_paysdk_string_securityfragment_recover_password">Quên mật khẩu</string>
+	<string name="com_cypay_paysdk_string_securityfragment_old_password_hint">Old Password</string>
+    <string name="com_cypay_paysdk_string_securityfragment_new_password_hint">Mật khẩu mới</string>
+    <string name="com_cypay_paysdk_string_securityfragment_retype_password_hint">Nhập lại mật khẩu</string>
+    <string name="com_cypay_paysdk_string_securityfragment_change_password_btn">thay đổi mật khẩu</string>
+    <string name="com_cypay_paysdk_string_securityfragment_bind_email_notify">thông báo:\nXin vui lòng đến hộp thư của bạn và nhấp vào liên kết được cung cấp để kích hoạt trong vòng 24 giờ.</string>
+    <string name="com_cypay_paysdk_string_securityfragment_bindemail_btn">Bind Email</string>
+    <string name="com_cypay_paysdk_string_securityfragment_recover_password_btn">Quên mật khẩu</string>
+    
+    <string name="com_cypay_paysdk_string_customservicefragment_title">Dịch vụ khách hàng</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_question_hint">Vui lòng nhập câu hỏi của bạn, chúng tôi sẽ trả lời trong vòng 2 ngày làm việc.</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_phoneno_hint">Số điện thoại</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_submit_btn">Gửi</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_submit_questions">Các câu hỏi gửi</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_questionemty_toast">Câu hỏi không thể để trống</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_submit_success_toast">Gửi thành công</string>
+    <string name="com_cypay_paysdk_string_customservicefragment_submit_success_failed">Gửi không thành công</string>
+    
+    <string name="com_cypay_paysdk_string_transactionfragment_search_toast">Không có hồ sơ</string>
+    <string name="com_cypay_paysdk_string_usercenterfragment_loginfirst_toast">Vui lòng đăng nhập đầu tiên</string>
+    <string name="com_cypay_paysdk_string_securityfragment_emailsended_toast">Email đã được gửi.</string>
+    <string name="com_cypay_paysdk_string_securityfragment_loginsuccess_toast">đăng nhập thành công</string>
+    
+    <string name="com_cypay_paysdk_string_forgot_pwd">Forgot?</string>
+    
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 单机 -->
+    <string name="cypaysdk_app_secret" translatable="false">2726a61826844c07b1f3c75bcb9de8c7</string>
+    
+    <string name="app_name" translatable="false">CYPaySDKDEMO</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="com_mbpay_demo_login_txt" translatable="false">&#160;&#160;&#160;Step1: Login with facebook.</string>
+    <string name="com_mbpay_demo_product_info" translatable="false">%1$s%2$s</string>
+    <string name="price" translatable="false">1</string>
+    <string name="productname" translatable="false">88 Gems</string>
+    <string name="input" translatable="false">input amount</string>
+    <string name="desc" translatable="false">0</string>
+    <string name="cpUserID" translatable="false">68612705</string>
+    
+</resources>

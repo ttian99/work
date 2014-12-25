@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.cypay.ui.MaxWidthLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/com_cypay_paysdk_banlance_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <View
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="0.67dp"
+        android:background="@color/com_cypay_paysdk_view_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/com_cypay_paysdk_dialog_wallet_bg_selector"
+        android:gravity="center_vertical"
+        android:minHeight="37dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <CheckBox
+                android:id="@+id/com_cypay_paysdk_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:button="@drawable/com_cypay_paysdk_checkbox_style"
+                android:clickable="false"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/com_cypay_paysdk_category_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="left"
+                android:singleLine="true"
+                android:text="@string/com_mobogenie_paysdk_channels_item_my_wallet"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/com_cypay_paysdk_banlenth_right_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/com_cypay_paysdk_arrows" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@id/com_cypay_paysdk_banlenth_right_arrow"
+                android:gravity="center_vertical|right"
+                android:orientation="vertical" >
+
+                <com.cypay.ui.MarqueeTextView
+                    android:id="@+id/com_cypay_paysdk_banlenth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center_vertical|right"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/com_cypay_paysdk_click_to_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|right"
+                    android:text="@string/com_cypay_paysdk_click_to_pay"
+                    android:textColor="#007084" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.67dp"
+        android:background="@color/com_cypay_paysdk_view_gray" />
+
+    <LinearLayout
+        android:id="@+id/com_cypay_paysdk_topup_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/com_cypay_paysdk_dialog_wallet_bg_selector"
+        android:gravity="center_vertical"
+        android:minHeight="37dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            android:text="@string/com_cypay_paysdk_topup_my_wallet"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/com_cypay_paysdk_arrows"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical|right"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:singleLine="true"
+            android:textColor="#ffc3a28a"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <View
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="0.67dp"
+        android:background="@color/com_cypay_paysdk_view_gray" />
+
+</com.cypay.ui.MaxWidthLinearLayout>

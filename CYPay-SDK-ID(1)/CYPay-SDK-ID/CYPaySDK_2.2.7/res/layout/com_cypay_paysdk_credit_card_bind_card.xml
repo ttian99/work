@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF2EBE5"
+    android:orientation="vertical" >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!-- 登录注册界面 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFFFF"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp" >
+
+                    <TextView
+                        android:id="@+id/com_cypay_mimopay_phone_tip_tv_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dip"
+                        android:textColor="#FF716F6B"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11.55dp"
+                        android:layout_marginBottom="11.55dp"
+                        android:visibility="gone"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="8.67dp"
+                            android:text="@string/com_cypay_paysdk_cc_userid"
+                            android:textColor="#FF5D5D5D"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/com_cypay_paysdk_cc_userid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#FFD09E21"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/com_cypay_paysdk_pwd_area"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:gravity="bottom"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/com_cypay_paysdk_pwd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="3"
+                            android:background="@drawable/com_cypay_paysdk_edittext_bg"
+                            android:hint="@string/com_cypay_paysdk_new_pwd"
+                            android:password="true"
+                            android:singleLine="true"
+                            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:numeric="decimal"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="#FFB2B2B2" >
+
+                            <requestFocus />
+                        </EditText>
+
+                        <TextView
+                            android:id="@+id/com_cypay_paysdk_forgot_pwd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:drawableLeft="@drawable/com_cypay_paysdk_forgot_sign"
+                            android:drawablePadding="4dp"
+                            android:gravity="left"
+                            android:text="@string/com_cypay_paysdk_string_forgot_pwd"
+                            android:textColor="@color/com_cypay_paysdk_forget_text_color"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/com_cypay_paysdk_cc_need_pwd"
+                        android:textColor="#FF5D5D5D"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        android:id="@+id/com_cypay_paysdk_need_pwd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <RadioButton
+                            android:id="@+id/com_cypay_paysdk_never"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/com_cypay_paysdk_cc_never"
+                            android:textColor="#FF5D5D5D"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/com_cypay_paysdk_thirty_min"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/com_cypay_paysdk_cc_thirty_min"
+                            android:textColor="#FF5D5D5D"
+                            android:checked="true"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/com_cypay_paysdk_everytime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/com_cypay_paysdk_cc_everytime"
+                            android:textColor="#FF5D5D5D"
+                            android:textSize="16sp" />
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <CheckBox
+                            android:id="@+id/com_cypay_paysdk_agree"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true" />
+
+                        <TextView
+                            android:id="@+id/com_cypay_paysdk_cc_agree"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:text="@string/com_cypay_paysdk_cc_agree"
+                            android:textColor="#FF5D5D5D"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/com_cypay_paysdk_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/com_cypay_paysdk_all_button_height"
+                    android:layout_gravity="center_horizontal"
+                    style="@style/com_cypay_paysdk_layout_style_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/com_cypay_paysdk_dialog_pay_btn"
+                    android:gravity="center"
+                    android:text="@string/com_cypay_paysdk_subimt"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/com_cypay_paysdk_all_button_font_size" />
+
+            </LinearLayout>
+            <!-- 安全支付 -->
+
+            
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

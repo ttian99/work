@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" >
+
+        <FrameLayout
+            android:id="@+id/bodycontent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/com_cypay_paysdk_cypay_basemap_gray_01"
+                android:orientation="vertical" >
+
+                <!-- 信息显示区（价格，产品名称） -->
+
+                <include layout="@layout/com_cypay_paysdk_header_view" />
+
+                <!-- 信用卡输入区 -->
+             	<include layout="@layout/com_cypay_paysdk_include_credit_card"/>
+
+                <FrameLayout
+                    android:id="@+id/com_cypay_paysdk_channels_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <!-- APD\NG使用的容器 -->
+
+                        <LinearLayout
+                            android:id="@+id/container"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" />
+
+                        <!-- 渠道横向列表的容器 -->
+
+                        <LinearLayout
+                            android:id="@+id/com_cypay_paysdk_channels_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:orientation="vertical" >
+
+                            <include layout="@layout/com_cypay_paysdk_channel_list" />
+
+                            <include layout="@layout/com_cypay_paysdk_wallet_payment" />
+                        </LinearLayout>
+                        <!-- 点卡等渠道用来输入信息 -->
+
+                        <include layout="@layout/com_cypay_paysdk_dialog_channels_input" />
+
+                        <!-- 安全支付 -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/com_cypay_paysdk_bottom_secure_notice_bg"
+                            android:orientation="horizontal" >
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1"
+                                android:scaleType="matrix"
+                                android:src="@drawable/com_cypay_paysdk_secure_logo" />
+
+                            <TextView
+                                android:id="@+id/com_cypay_paysdk_about_us"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1"
+                                android:clickable="true"
+                                android:gravity="right"
+                                android:paddingRight="8dp"
+                                android:text="@string/com_cypay_paysdk_string_securityfragment_about_us"
+                                android:textColor="#000000"
+                                android:textSize="12sp"
+                                android:textStyle="italic" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- 关闭按钮 -->
+
+            <ImageView
+                android:id="@+id/com_cypay_paysdk_dialog_dismiss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|right"
+                android:src="@drawable/com_cypay_paysdk_dialog_dismiss_pressed" />
+        </FrameLayout>
+    </ScrollView>
+
+</FrameLayout>

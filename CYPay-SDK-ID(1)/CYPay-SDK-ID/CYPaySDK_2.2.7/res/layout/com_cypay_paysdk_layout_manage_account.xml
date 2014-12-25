@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#F5F5F5"
+    android:id="@+id/mcontainer"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <LinearLayout 
+        android:id="@+id/reg_linear"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+
+         <LinearLayout 
+         android:id="@+id/username_linear"
+         style="@style/com_cypay_paysdk_layout_style_margin"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:gravity="center_vertical"
+         >
+       
+         <EditText 
+             android:id="@+id/username_edt"
+             android:hint="@string/com_cypay_paysdk_string_manageaccountfragment_username_hint"
+             android:textColor="@color/com_cypay_paysdk_usercenter_content_black"
+             android:singleLine="true"
+             android:layout_width="0dp"
+             android:layout_weight="8.0"
+             android:layout_height="wrap_content"
+             android:background="@drawable/com_cypay_paysdk_edittext_bg"
+             android:textSize="@dimen/com_cypay_paysdk_all_edit_font_size"
+             />
+         
+     
+         </LinearLayout>
+         
+            <LinearLayout 
+         android:id="@+id/password_linear"
+         style="@style/com_cypay_paysdk_layout_style_margin"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:gravity="center_vertical"
+         >
+       
+          
+         <EditText 
+             android:id="@+id/password_edt"
+             android:textColor="@color/com_cypay_paysdk_usercenter_content_black"
+             android:hint="@string/com_cypay_paysdk_string_manageaccountfragment_password_hint"
+             android:singleLine="true"
+             android:password="true"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:background="@drawable/com_cypay_paysdk_edittext_bg"
+             android:textSize="@dimen/com_cypay_paysdk_all_edit_font_size"
+             />
+         
+         </LinearLayout>
+         
+         <LinearLayout 
+         android:id="@+id/logbutton_linear"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:gravity="center_vertical"
+         android:orientation="vertical"
+         >
+         <LinearLayout 
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="10dp"
+         android:layout_marginRight="10dp"
+         android:layout_marginTop="20dp"
+         android:gravity="center_vertical"
+         >
+         
+        
+         
+         <Button 
+             android:id="@+id/login_btn"
+             android:gravity="center"
+             android:text="@string/com_cypay_paysdk_string_manageaccountfragment_login_btn"
+             android:textColor="#FFFFFF"
+             android:textSize="@dimen/com_cypay_paysdk_all_button_font_size"
+             android:layout_width="fill_parent"
+             android:layout_height="40dp"
+             android:background="@drawable/com_cypay_paysdk_dialog_pay_btn"
+             />
+         
+          
+         </LinearLayout>
+         
+  <LinearLayout 
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="10dp"
+             >
+      
+             
+                <LinearLayout 
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical"
+             >
+             
+             <View 
+                 android:layout_width="fill_parent"
+                 android:layout_height="1dp"
+                 android:background="#CAC4BD"
+                 />
+       
+            <LinearLayout 
+                android:id="@+id/regist_linear"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                >
+                 <ImageView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/com_cypay_paysdk_regist_icon"
+                />
+            
+           <TextView 
+             android:layout_marginLeft="15dp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textSize="18sp"
+             android:textColor="#9B8E7C"
+             android:text="@string/com_cypay_paysdk_string_manageaccountfragment_regist_linear"
+             />
+            </LinearLayout>
+            
+          <View 
+                 android:layout_width="fill_parent"
+                 android:layout_height="1dp"
+                 android:background="#CAC4BD"
+                 />
+       
+         </LinearLayout>
+             
+        
+         </LinearLayout>
+             
+         </LinearLayout>
+         
+        
+         </LinearLayout>
+       
+
+    
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mcontainer"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+
+
+
+     <LinearLayout 
+         android:id="@+id/progress"
+         android:visibility="gone"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:gravity="center"
+         >
+         <ProgressBar 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         />
+     </LinearLayout>
+     
+    
+     <ListView 
+         android:id="@+id/data_list"
+         android:descendantFocusability="blocksDescendants"
+         android:visibility="gone"
+         android:divider="@color/com_cypay_paysdk_all_line_color"
+         android:dividerHeight="1dp"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:layout_marginBottom="1dp"
+         android:cacheColorHint="#00000000"
+         />
+
+
+    
+</LinearLayout>

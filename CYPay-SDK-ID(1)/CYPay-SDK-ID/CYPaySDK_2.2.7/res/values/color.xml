@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="white">#ffffff</color>
+	<color name="transparent">#00000000</color>
+    <color name="com_mobogenie_paysdk_auto_login_account_color">#FF008ec3</color>
+    <color name="com_mobogenie_paysdk_auto_login_text_color">#FF494E4E</color>
+    <color name="com_mobogenie_paysdk_channels_text_price_color">#282828</color>
+    <color name="com_mobogenie_paysdk_channels_text_tip_color">#747474</color>
+    <color name="com_mobogenie_paysdk_channels_text_title_color">#1b1b1b</color>
+    
+    <color name="com_cypay_paysdk_channels_text_gary">#8b8b8b</color>
+    <color name="com_cypay_paysdk_channels_text_black">#333333</color>
+    <color name="com_cypay_paysdk_channels_line">#949494</color>
+    <color name="com_cypay_paysdk_channels_gv_bg">#d5d5d5</color>
+    <color name="com_cypay_paysdk_channels_safety">#71d348</color>
+    
+    <color name="com_cypay_paysdk_item_selected">#ffebebeb</color>
+    <color name="com_cypay_paysdk_item_wallet_hl">#ffe5dcd4</color>
+    <color name="com_cypay_paysdk_view_gray">#ffdbdbdb</color>
+    
+    <color name="com_cypay_paysdk_usercenter_content_black">#7F7F7F</color>
+    <color name="com_cypay_paysdk_bottom_secure_notice_bg">#F5F5F5</color>
+    <color name="com_cypay_paysdk_all_line_color">#94c4e0</color>
+    <color name="com_cypay_paysdk_forget_text_color">#917b67</color>
+    <color name="com_cypay_paysdk_title_bg">#F5F5F5</color><!-- 标题的背景色 -->
+    <color name="com_cypay_paysdk_content_bg">#F5F5F5</color><!-- 内容的背景色 -->
+    <color name="com_cypay_paysdk_land_home_linear_bg">#00619b</color><!-- 横屏头部home键背景色 -->
+    <color name="com_cypay_paysdk_custom_service_normal_bg">#F5F5F5</color><!-- Curtomservice按下前背景色 -->
+    <color name="com_cypay_paysdk_custom_service_down_bg">#F0F0F0</color><!-- Curtomservice按下后背景色 -->
+</resources>

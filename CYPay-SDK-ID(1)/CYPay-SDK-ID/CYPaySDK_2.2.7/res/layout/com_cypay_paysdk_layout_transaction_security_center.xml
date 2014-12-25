@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#F5F5F5"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+
+        
+        <LinearLayout 
+         android:id="@+id/mcontainer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+    
+    <LinearLayout 
+        android:id="@+id/center_main"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+    
+            
+            <LinearLayout 
+                android:background="#FFFFFF"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+                
+                  <RelativeLayout 
+                android:id="@+id/change_rel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                >
+                    <ImageView 
+                    android:id="@+id/reset_pwd"
+                    android:clickable="true"
+                    android:scaleType="fitXY"
+                    android:padding="0dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/com_cypay_paysdk_reset_password"
+                    />
+                    
+                    <TextView 
+                    android:textColor="@color/com_cypay_paysdk_usercenter_content_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_alignBottom="@+id/reset_pwd"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/com_cypay_paysdk_usercenter_label_font_size"
+                    android:text="@string/com_cypay_paysdk_string_securityfragment_change_password"
+                    />
+                </RelativeLayout>
+                
+                   <RelativeLayout 
+                android:id="@+id/find_rel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                >
+                  <ImageView 
+                    android:id="@+id/find_pwd"
+                    android:clickable="true"
+                    android:scaleType="fitXY"
+                    android:padding="0dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/com_cypay_paysdk_find_back_password"
+                    />
+                      <TextView 
+                    android:textColor="@color/com_cypay_paysdk_usercenter_content_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_alignBottom="@+id/find_pwd"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/com_cypay_paysdk_usercenter_label_font_size"
+                    android:text="@string/com_cypay_paysdk_string_securityfragment_recover_password"
+                    />
+                </RelativeLayout>
+                
+                <RelativeLayout 
+                android:id="@+id/bind_rel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                >
+                <ImageView 
+                    android:id="@+id/bind_email"
+                    android:scaleType="fitXY"
+                    android:padding="0dp"
+                    android:clickable="true"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/com_cypay_paysdk_bind_email"
+                    />
+                
+                    <TextView 
+                    android:textColor="@color/com_cypay_paysdk_usercenter_content_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_alignBottom="@+id/bind_email"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/com_cypay_paysdk_usercenter_label_font_size"
+                    android:text="@string/com_cypay_paysdk_string_securityfragment_bind_email"
+                    />
+                </RelativeLayout>
+               
+                
+            </LinearLayout>
+               
+</LinearLayout>
+</LinearLayout>
+
+</ScrollView>
