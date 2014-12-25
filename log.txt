@@ -1,0 +1,167 @@
+12-25 18:47:53.586: I/SurfaceTextureClient(23674): [STC::queueBuffer] (this:0x79696120) fps:60.79, dur:1003.44, max:20.21, min:13.35
+12-25 18:47:54.106: I/View(23674): Touch down dispatch to org.cocos2dx.lib.Cocos2dxGLSurfaceView{41a82918 VFE..... .F....I. 0,0-720,1280}, event = MotionEvent { action=ACTION_DOWN, id[0]=0, x[0]=350.51318, y[0]=1084.153, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=3123443, downTime=3123443, deviceId=3, source=0x1002 }
+12-25 18:47:54.139: I/View(23674): Touch up dispatch to org.cocos2dx.lib.Cocos2dxGLSurfaceView{41a82918 VFE..... .F....I. 0,0-720,1280}, event = MotionEvent { action=ACTION_UP, id[0]=0, x[0]=350.51318, y[0]=1084.153, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=3123483, downTime=3123443, deviceId=3, source=0x1002 }
+12-25 18:47:54.142: D/cocos2d-x debug info(23674): JS:  --- vv.util.pushBuyEvent --- 
+12-25 18:47:54.142: D/cocos2d-x debug info(23674): .......................  js_vv_buyDiamond .. 1d
+12-25 18:47:54.142: D/cocos2d-x debug info(23674): {"subject":"Mega Pack","body":"Mega Pack","total":20,"itemid":5}
+12-25 18:47:54.198: D/jiao(23674): 我上飞机上得分--------------Thu Dec 25 18:47:54 格林尼治标准时间+0800 2014
+12-25 18:47:54.213: D/cocos2d-x debug info(23674):  c++ ---- applicationDidEnterBackground
+12-25 18:47:54.214: D/cocos2d-x debug info(23674): JS:  ----- js applicationDidEnterBackground ------ 
+12-25 18:47:54.214: D/cocos2d-x debug info(23674): JS:  ---- start syncDataToSqllite --- 
+12-25 18:47:54.214: D/cocos2d-x debug info(23674): JS:  --- syncDataToSqllite -- success
+12-25 18:47:54.230: D/TelephonyManager(23674): getDefaultSim check single_sim=false, first_single_sim=0
+12-25 18:47:54.231: D/TelephonyManager(23674): getDefaultSim = 0
+12-25 18:47:54.231: D/TelephonyManager(23674): getSimCountryIso:0
+12-25 18:47:54.232: D/TelephonyManager(23674): getDefaultSim check single_sim=false, first_single_sim=0
+12-25 18:47:54.232: D/TelephonyManager(23674): getDefaultSim = 0
+12-25 18:47:54.249: D/dalvikvm(23674): create interp thread : stack size=128KB
+12-25 18:47:54.249: D/dalvikvm(23674): create new thread
+12-25 18:47:54.249: D/dalvikvm(23674): new thread created
+12-25 18:47:54.249: D/dalvikvm(23674): update thread list
+12-25 18:47:54.249: D/dalvikvm(23674): threadid=19: interp stack at 0x7928b000
+12-25 18:47:54.249: D/dalvikvm(23674): threadid=19: created from interp
+12-25 18:47:54.249: D/dalvikvm(23674): start new thread
+12-25 18:47:54.250: D/dalvikvm(23674): threadid=19: notify debugger
+12-25 18:47:54.250: D/dalvikvm(23674): threadid=19 (RefQueueWorker@org.apache.http.impl.conn.tsccm.ConnPoolByRoute@41b09bb8): calling run()
+12-25 18:47:54.254: D/dalvikvm(23674): create interp thread : stack size=128KB
+12-25 18:47:54.254: D/dalvikvm(23674): create new thread
+12-25 18:47:54.254: D/dalvikvm(23674): new thread created
+12-25 18:47:54.254: D/dalvikvm(23674): update thread list
+12-25 18:47:54.254: D/dalvikvm(23674): threadid=21: interp stack at 0x794db000
+12-25 18:47:54.254: D/dalvikvm(23674): threadid=21: created from interp
+12-25 18:47:54.257: D/dalvikvm(23674): start new thread
+12-25 18:47:54.258: D/dalvikvm(23674): threadid=21: notify debugger
+12-25 18:47:54.258: D/dalvikvm(23674): threadid=21 (RefQueueWorker@org.apache.http.impl.conn.tsccm.ConnPoolByRoute@41cb62f8): calling run()
+12-25 18:47:54.268: I/SurfaceView(23674): updateWindow -- OnPreDrawListener, mHaveFrame = true
+12-25 18:47:54.268: D/Surface(23674): [0x796949c8] Surface::lock() +
+12-25 18:47:54.276: D/Surface(23674): [0x796949c8] Surface::lock() -
+12-25 18:47:54.279: I/SurfaceTextureClient(23674): [STC::queueBuffer] (this:0x796949c8) fps:0.02, dur:59706.81, max:59706.81, min:59706.81
+12-25 18:47:54.279: I/SurfaceTextureClient(23674): [STC::queueBuffer] this:0x796949c8, api:2, last queue time elapsed:59706.81
+12-25 18:47:54.282: D/cocos2d-x debug info(23674):  c++ ---- applicationWillEnterForeground
+12-25 18:47:54.283: D/cocos2d-x debug info(23674): JS:  ---- js applicationWillEnterForeground -- 
+12-25 18:47:54.317: I/SurfaceView(23674): updateWindow -- OnPreDrawListener, mHaveFrame = true
+12-25 18:47:54.354: D/libc-netbsd(23674): getaddrinfo: monitor.wall-et.net get result from proxy >>
+12-25 18:47:54.354: I/System.out(23674): propertyValue:true
+12-25 18:47:54.355: I/System.out(23674): [socket][9] connection /54.169.79.50:443;LocalPort=50792(5000)
+12-25 18:47:54.355: I/System.out(23674): [CDS]connect[/54.169.79.50:443] tm:5
+12-25 18:47:54.355: D/Posix(23674): [Posix_connect Debug]Process com.zeusky.star :443 
+12-25 18:47:54.378: D/libc-netbsd(23674): getaddrinfo: open.wall-et.net get result from proxy >>
+12-25 18:47:54.378: I/System.out(23674): propertyValue:true
+12-25 18:47:54.378: I/System.out(23674): [socket][10] connection /54.169.48.73:443;LocalPort=35051(5000)
+12-25 18:47:54.378: I/System.out(23674): [CDS]connect[/54.169.48.73:443] tm:5
+12-25 18:47:54.379: D/Posix(23674): [Posix_connect Debug]Process com.zeusky.star :443 
+12-25 18:47:54.525: E/SQLiteLog(23674): (257) Open fd: 95, file: /data/data/com.zeusky.star/databases/jsb.sqlite-journal
+12-25 18:47:54.525: E/SQLiteLog(23674): (257) Close fd: 95
+12-25 18:47:54.527: E/SQLiteLog(23674): (257) Open fd: 95, file: /data/data/com.zeusky.star/databases/jsb.sqlite-journal
+12-25 18:47:54.527: E/SQLiteLog(23674): (257) Close fd: 95
+12-25 18:47:54.529: E/SQLiteLog(23674): (257) Open fd: 95, file: /data/data/com.zeusky.star/databases/jsb.sqlite-journal
+12-25 18:47:54.529: E/SQLiteLog(23674): (257) Close fd: 95
+12-25 18:47:54.531: E/SQLiteLog(23674): (257) Open fd: 82, file: /data/data/com.zeusky.star/databases/jsb.sqlite-journal
+12-25 18:47:54.531: E/SQLiteLog(23674): (257) Close fd: 82
+12-25 18:47:54.532: E/SQLiteLog(23674): (257) Open fd: 91, file: /data/data/com.zeusky.star/databases/jsb.sqlite-journal
+12-25 18:47:54.532: E/SQLiteLog(23674): (257) Close fd: 91
+12-25 18:47:54.533: E/SQLiteLog(23674): (257) Open fd: 91, file: /data/data/com.zeusky.star/databases/jsb.sqlite-journal
+12-25 18:47:54.533: E/SQLiteLog(23674): (257) Close fd: 91
+12-25 18:47:54.534: E/SQLiteLog(23674): (257) Open fd: 91, file: /data/data/com.zeusky.star/databases/jsb.sqlite-journal
+12-25 18:47:54.535: E/SQLiteLog(23674): (257) Close fd: 91
+12-25 18:47:54.597: I/SurfaceTextureClient(23674): [STC::queueBuffer] (this:0x79696120) fps:58.33, dur:1011.52, max:80.78, min:4.29
+12-25 18:47:54.599: I/System.out(23674): [socket][/192.168.1.129:35051] connected
+12-25 18:47:54.599: I/System.out(23674): [CDS]rx timeout:5000
+12-25 18:47:54.599: I/System.out(23674): [CDS]SO_SND_TIMEOUT:0
+12-25 18:47:54.602: D/NativeCrypto(23674): ssl=0x80f742e0 NativeCrypto_SSL_do_handshake fd=0x41c2bc78 shc=0x41b87450 timeout_millis=5000 client_mode=1 npn=0x0
+12-25 18:47:54.602: D/NativeCrypto(23674): doing handshake ++
+12-25 18:47:54.602: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x10 ret=1
+12-25 18:47:54.602: D/NativeCrypto(23674): ssl=0x80f742e0 handshake start in UNKWN  before/connect initialization
+12-25 18:47:54.602: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback ignored
+12-25 18:47:54.602: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x1001 ret=1
+12-25 18:47:54.602: D/NativeCrypto(23674): ssl=0x80f742e0 SSL_connect:UNKWN  before/connect initialization
+12-25 18:47:54.602: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback ignored
+12-25 18:47:54.603: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x1001 ret=1
+12-25 18:47:54.603: D/NativeCrypto(23674): ssl=0x80f742e0 SSL_connect:23WCHA SSLv2/v3 write client hello A
+12-25 18:47:54.603: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback ignored
+12-25 18:47:54.603: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x1002 ret=-1
+12-25 18:47:54.603: D/NativeCrypto(23674): ssl=0x80f742e0 SSL_connect:error exit in 23RSHA SSLv2/v3 read server hello A
+12-25 18:47:54.603: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback ignored
+12-25 18:47:54.603: D/NativeCrypto(23674): doing handshake -- ret=-1
+12-25 18:47:54.603: D/NativeCrypto(23674): ssl=0x80f742e0 NativeCrypto_SSL_do_handshake ret=-1 errno=11 sslError=2 timeout_millis=5000
+12-25 18:47:54.603: D/NativeCrypto(23674): sslSelect type=READ fd=61 appData=0x7c038450 timeout_millis=5000
+12-25 18:47:54.836: D/NativeCrypto(23674): sslSelect READ fd=61 appData=0x7c038450 timeout_millis=5000 => 1
+12-25 18:47:54.836: D/NativeCrypto(23674): doing handshake ++
+12-25 18:47:54.836: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x1001 ret=1
+12-25 18:47:54.836: D/NativeCrypto(23674): ssl=0x80f742e0 SSL_connect:3RSH_A SSLv3 read server hello A
+12-25 18:47:54.836: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback ignored
+12-25 18:47:54.839: E/NativeCrypto(23674): ssl=0x80f742e0 cert_verify_callback x509_store_ctx=0x798de5d0 arg=0x0
+12-25 18:47:54.839: E/NativeCrypto(23674): ssl=0x80f742e0 cert_verify_callback calling verifyCertificateChain authMethod=ECDHE_RSA
+12-25 18:47:54.842: D/NativeCrypto(23674): ssl=0x80f742e0 cert_verify_callback => 1
+12-25 18:47:54.842: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x1001 ret=1
+12-25 18:47:54.842: D/NativeCrypto(23674): ssl=0x80f742e0 SSL_connect:3RSC_A SSLv3 read server certificate A
+12-25 18:47:54.842: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback ignored
+12-25 18:47:54.843: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x1001 ret=1
+12-25 18:47:54.843: D/NativeCrypto(23674): ssl=0x80f742e0 SSL_connect:3RSKEA SSLv3 read server key exchange A
+12-25 18:47:54.843: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback ignored
+12-25 18:47:54.843: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x1001 ret=1
+12-25 18:47:54.843: D/NativeCrypto(23674): ssl=0x80f742e0 SSL_connect:3RSD_A SSLv3 read server done A
+12-25 18:47:54.843: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback ignored
+12-25 18:47:54.863: D/OpenSSLLib(23674):  User Build
+12-25 18:47:54.863: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x1001 ret=1
+12-25 18:47:54.863: D/NativeCrypto(23674): ssl=0x80f742e0 SSL_connect:3WCKEA SSLv3 write client key exchange A
+12-25 18:47:54.863: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback ignored
+12-25 18:47:54.864: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x1001 ret=1
+12-25 18:47:54.864: D/NativeCrypto(23674): ssl=0x80f742e0 SSL_connect:3WCCSA SSLv3 write change cipher spec A
+12-25 18:47:54.864: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback ignored
+12-25 18:47:54.865: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x1001 ret=1
+12-25 18:47:54.865: D/NativeCrypto(23674): ssl=0x80f742e0 SSL_connect:3WFINA SSLv3 write finished A
+12-25 18:47:54.865: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback ignored
+12-25 18:47:54.865: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x1001 ret=1
+12-25 18:47:54.865: D/NativeCrypto(23674): ssl=0x80f742e0 SSL_connect:3FLUSH SSLv3 flush data
+12-25 18:47:54.865: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback ignored
+12-25 18:47:54.865: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x1002 ret=-1
+12-25 18:47:54.865: D/NativeCrypto(23674): ssl=0x80f742e0 SSL_connect:error exit in 3RFINA SSLv3 read finished A
+12-25 18:47:54.865: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback ignored
+12-25 18:47:54.865: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x1002 ret=-1
+12-25 18:47:54.865: D/NativeCrypto(23674): ssl=0x80f742e0 SSL_connect:error exit in 3RFINA SSLv3 read finished A
+12-25 18:47:54.865: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback ignored
+12-25 18:47:54.865: D/NativeCrypto(23674): doing handshake -- ret=-1
+12-25 18:47:54.865: D/NativeCrypto(23674): ssl=0x80f742e0 NativeCrypto_SSL_do_handshake ret=-1 errno=11 sslError=2 timeout_millis=5000
+12-25 18:47:54.865: D/NativeCrypto(23674): sslSelect type=READ fd=61 appData=0x7c038450 timeout_millis=5000
+12-25 18:47:55.087: D/NativeCrypto(23674): sslSelect READ fd=61 appData=0x7c038450 timeout_millis=5000 => 1
+12-25 18:47:55.087: D/NativeCrypto(23674): doing handshake ++
+12-25 18:47:55.087: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x1001 ret=1
+12-25 18:47:55.087: D/NativeCrypto(23674): ssl=0x80f742e0 SSL_connect:3RFINA SSLv3 read finished A
+12-25 18:47:55.089: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback ignored
+12-25 18:47:55.089: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x20 ret=1
+12-25 18:47:55.089: D/NativeCrypto(23674): ssl=0x80f742e0 handshake done in SSLOK  SSL negotiation finished successfully
+12-25 18:47:55.090: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback calling handshakeCompleted
+12-25 18:47:55.090: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback completed
+12-25 18:47:55.090: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback where=0x1002 ret=1
+12-25 18:47:55.090: D/NativeCrypto(23674): ssl=0x80f742e0 SSL_connect:ok exit in SSLOK  SSL negotiation finished successfully
+12-25 18:47:55.090: D/NativeCrypto(23674): ssl=0x80f742e0 info_callback ignored
+12-25 18:47:55.090: D/NativeCrypto(23674): doing handshake -- ret=1
+12-25 18:47:55.090: D/NativeCrypto(23674): ssl=0x80f742e0 NativeCrypto_SSL_get_certificate => NULL
+12-25 18:47:55.094: I/System.out(23674): >doSendRequest
+12-25 18:47:55.110: D/NativeCrypto(23674): ssl=0x80f742e0 sslWrite buf=0x41d65ac0 len=183 write_timeout_millis=0
+12-25 18:47:55.111: D/NativeCrypto(23674): Doing SSL_write() with 183 bytes to go ssl=0x80f742e0, appData=0x7c038450
+12-25 18:47:55.111: D/NativeCrypto(23674): Returned from SSL_write() with result 183, error code 0 ssl=0x80f742e0, appData=0x7c038450
+12-25 18:47:55.111: I/System.out(23674): [CDS]rx timeout:2000
+12-25 18:47:55.111: I/System.out(23674): [CDS]rx timeout:2000
+12-25 18:47:55.112: D/NativeCrypto(23674): ssl=0x80f742e0 sslRead buf=0x41b25788 len=8192,timeo=2000
+12-25 18:47:55.112: D/NativeCrypto(23674): Doing SSL_Read() ssl=0x80f742e0, appData=0x7c038450
+12-25 18:47:55.112: D/NativeCrypto(23674): Returned from SSL_Read() with result -1, error code 2 ssl=0x80f742e0, appData=0x7c038450
+12-25 18:47:55.112: D/NativeCrypto(23674): sslSelect type=READ fd=61 appData=0x7c038450 timeout_millis=2000
+12-25 18:47:55.354: D/NativeCrypto(23674): sslSelect READ fd=61 appData=0x7c038450 timeout_millis=2000 => 1
+12-25 18:47:55.356: D/NativeCrypto(23674): Doing SSL_Read() ssl=0x80f742e0, appData=0x7c038450
+12-25 18:47:55.357: D/NativeCrypto(23674): Returned from SSL_Read() with result 25, error code 0 ssl=0x80f742e0, appData=0x7c038450
+12-25 18:47:55.357: I/System.out(23674): [CDS]rx timeout:5000
+12-25 18:47:55.357: I/System.out(23674): [CDS]rx timeout:5000
+12-25 18:47:55.360: D/NativeCrypto(23674): ssl=0x80f742e0 sslWrite buf=0x41d65ac0 len=161 write_timeout_millis=0
+12-25 18:47:55.360: D/NativeCrypto(23674): Doing SSL_write() with 161 bytes to go ssl=0x80f742e0, appData=0x7c038450
+12-25 18:47:55.361: D/NativeCrypto(23674): Returned from SSL_write() with result 161, error code 0 ssl=0x80f742e0, appData=0x7c038450
+12-25 18:47:55.362: I/System.out(23674): <doSendRequest
+12-25 18:47:55.362: D/NativeCrypto(23674): ssl=0x80f742e0 sslRead buf=0x41b25788 len=8192,timeo=5000
+12-25 18:47:55.362: D/NativeCrypto(23674): Doing SSL_Read() ssl=0x80f742e0, appData=0x7c038450
+12-25 18:47:55.362: D/NativeCrypto(23674): Returned from SSL_Read() with result -1, error code 2 ssl=0x80f742e0, appData=0x7c038450
+12-25 18:47:55.362: D/NativeCrypto(23674): sslSelect type=READ fd=61 appData=0x7c038450 timeout_millis=5000
+12-25 18:47:55.604: I/SurfaceTextureClient(23674): [STC::queueBuffer] (this:0x79696120) fps:60.59, dur:1006.79, max:27.71, min:9.87
+12-25 18:47:55.652: D/NativeCrypto(23674): sslSelect READ fd=61 appData=0x7c038450 timeout_millis=5000 => 1
+12-25 18:47:55.652: D/NativeCrypto(23674): Doing SSL_Read() ssl=0x80f742e0, appData=0x7c038450
+12-25 18:47:55.652: D/NativeCrypto(23674): Returned from SSL_Read() with result 192, error code 0 ssl=0x80f742e0, appData=0x7c038450
