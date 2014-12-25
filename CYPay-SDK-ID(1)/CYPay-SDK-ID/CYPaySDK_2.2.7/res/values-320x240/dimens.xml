@@ -1,9 +1,0 @@
-<resources>
-  <dimen name="com_cypay_paysdk_question_answer_content_font_size">15sp</dimen><!-- FAQ问题内容字体大小 -->
-  <dimen name="com_cypay_paysdk_transaction_item_line1_font_size">16sp</dimen><!-- 查询订单列表item第一行字体大小-->
-  <dimen name="com_cypay_paysdk_pick_date_edit_font_size">8sp</dimen><!-- 选日期文本输入框字体大小 -->
-  <dimen name="land_com_cypay_paysdk_head_amount_font_size">28sp</dimen><!-- 横屏头部金额字体大小 -->
-  <dimen name="com_cypay_paysdk_head_amount_font_size">24sp</dimen><!-- 头部金额字体大小 -->
-  <dimen name="com_cypay_paysdk_question_edit_height">100dp</dimen><!-- 用户服务问题输入框高度 -->
-  <dimen name="com_cypay_paysdk_production_font_size">14sp</dimen>
-</resources>
